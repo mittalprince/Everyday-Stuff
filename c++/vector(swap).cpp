@@ -28,7 +28,7 @@ void prince(vector <int> &v){
 
 int main(){
   int n = 5;
-  vector<int> v{2,3,4,5,6,9};
+  vector<int> v{2,3,4,5,6,};
 
   prince(v);
   for(int j=0;j<n;j++){
