@@ -16,56 +16,56 @@ Input:  arr[] = {4, 3, 2, 1}
 Output: No such triplet
 */
 
-/*        Using Auxillary Space   */
-//
-// #include<iostream>
-//
-// using namespace std;
-//
-// bool subarray(int arr[], int n){
-//     int min=0,max=n-1,i;
-//     int smaller[n], greater[n];
-//
-//     smaller[0]=-1;
-//     for(i=1;i<n;i++){
-//       if(arr[i] <= arr[min]){
-//         smaller[i]= -1;
-//         min=i;
-//       }
-//       else{
-//         smaller[i]=min;
-//       }
-//     }
-//     greater[n-1]=-1;
-//     for(i=n-2;i>=0;i--){
-//       if(arr[i] >= arr[max]){
-//         greater[i]= -1;
-//         max=i;
-//       }
-//       else{
-//         greater[i]=max;
-//       }
-//     }
-//     for(i=0;i<n;i++){
-//       if(smaller[i]!= -1 && greater[i]!= -1){
-//         cout<<arr[smaller[i]]<<" "<<arr[i]<<" "<<arr[greater[i]]<<endl;
-//         return true;
-//       }
-//     }
-//     return false;
-// }
-//
-// int main(){
-//   int arr[]= {12, 11, 10, 5, 6, 2, 30};
-//   bool ans = subarray(arr, sizeof(arr)/sizeof(int));
-//   if(!ans){
-//     cout<<"No subarray exist"<<endl;
-//   }
-//   return 0;
-// }
+/*
+                        Using Auxillary Space
 
+#include<iostream>
 
+using namespace std;
 
+bool subarray(int arr[], int n){
+    int min=0,max=n-1,i;
+    int smaller[n], greater[n];
+
+    smaller[0]=-1;
+    for(i=1;i<n;i++){
+      if(arr[i] <= arr[min]){
+        smaller[i]= -1;
+        min=i;
+      }
+      else{
+        smaller[i]=min;
+      }
+    }
+    greater[n-1]=-1;
+    for(i=n-2;i>=0;i--){
+      if(arr[i] >= arr[max]){
+        greater[i]= -1;
+        max=i;
+      }
+      else{
+        greater[i]=max;
+      }
+    }
+    for(i=0;i<n;i++){
+      if(smaller[i]!= -1 && greater[i]!= -1){
+        cout<<arr[smaller[i]]<<" "<<arr[i]<<" "<<arr[greater[i]]<<endl;
+        return true;
+      }
+    }
+    return false;
+}
+
+int main(){
+  int arr[]= {12, 11, 10, 5, 6, 2, 30};
+  bool ans = subarray(arr, sizeof(arr)/sizeof(int));
+  if(!ans){
+    cout<<"No subarray exist"<<endl;
+  }
+  return 0;
+}
+
+*/
 
 #include<iostream>
 #include<climits>
