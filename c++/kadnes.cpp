@@ -26,7 +26,7 @@ int subarray_sum(int arr[], int size){
 
 int main(){
 
-  int arr[] = {12 + 8 - 8 + 9 - 9 + 10};
+  int arr[] = {-9,10,-11,12,8,-8,9};
   int n = sizeof(arr)/sizeof(arr[0]);
   int max_sum = subarray_sum(arr,n);
   cout<<max_sum<<endl;
