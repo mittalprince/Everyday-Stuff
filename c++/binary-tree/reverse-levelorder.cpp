@@ -1,3 +1,5 @@
+/* Reverse LevelOrder Traversal  implement using class stack and Queue */
+
 #include<iostream>
 #include<queue>
 #include<stack>
@@ -46,13 +48,11 @@ public:
       s.pop();
     }
   }
-
   ~node(){
     delete left;
     delete right;
   }
 };
-
 
 int main(){
 
