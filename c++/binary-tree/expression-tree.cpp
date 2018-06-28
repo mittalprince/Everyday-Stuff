@@ -1,3 +1,8 @@
+/* Given a postfix expression convert this into the binary tree .
+Inorder traversal of expression tree produces infix version of given
+postfix expression (same with preorder traversal it gives prefix expression).
+So given postfix make tree then we can find infix and prefix expression */
+
 #include<iostream>
 #include<sstream>
 #include<cctype>
