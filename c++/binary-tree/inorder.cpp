@@ -53,7 +53,7 @@ int main(){
   root->leftnode() = new node(2);
   root->rightnode() = new node(3);
   root->leftnode()->leftnode() = new node(4);
-  root->rightnode()->rightnode() = new node(5);
+  root->leftnode()->rightnode() = new node(5);
 
   inorder(root);
   return 0;
