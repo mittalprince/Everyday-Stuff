@@ -1,3 +1,10 @@
+/* 
+Find all possible binary trees with given Inorder Traversal
+
+Given an array that represents Inorder Traversal, find all possible Binary Trees 
+with the given Inorder traversal and print their preorder traversals. */
+
+
 #include<iostream>
 #include<set>
 #include<vector>
