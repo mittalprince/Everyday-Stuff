@@ -29,7 +29,7 @@ struct node* newnode(int data){
 	return temp;
 }
 
-vector<vector<int> > arr(6, vector<int> (6,0));
+vector< vector<bool> > arr(6, vector<bool> (6,false));
 
 int max_value_of_node(node *root){
 
@@ -55,20 +55,20 @@ void ancestor_matrix(node *root, int n){
 	ancestor_matrix(root->right, n);
 
 	if(root->left != nullptr){
-		arr[root->data][root->left->data] = 1;
+		arr[root->data][root->left->data] = true;
 
-		for(int i=0;i<=n;i++){
-			if(arr[root->left->data][i] == 1)
-				arr[root->data][i] = 1;
+		for(int i=0;i<n;i++){
+			if(arr[root->left->data][i] == true)
+				arr[root->data][i] = true;
 		}
 	}
 
 	if(root->right != nullptr){
-		arr[root->data][root->right->data] = 1;
+		arr[root->data][root->right->data] = true;
 
-		for(int i=0;i<=n;i++){
-			if(arr[root->right->data][i] == 1)
-				arr[root->data][i] = 1;
+		for(int i=0;i<n;i++){
+			if(arr[root->right->data][i] == true)
+				arr[root->data][i] = true;
 		}
 	}
 }
@@ -82,11 +82,9 @@ int main(){
     root->left->right = newnode(4);
     root->right->left = newnode(3);
 
-    int n = max_value_of_node(root);
-
-    int arr[n+1][n+1];
+    //int n = max_value_of_node(root);
  
-    ancestor_matrix(root, n);
+    ancestor_matrix(root, 6);
 
     for(int i=0;i<=5;i++){
     	for(int j=0;j<=5;j++){
