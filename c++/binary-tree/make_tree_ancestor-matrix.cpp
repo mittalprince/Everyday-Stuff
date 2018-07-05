@@ -23,7 +23,7 @@ Problem statement link https://www.geeksforgeeks.org/construct-tree-from-ancesto
 
 using namespace std;
 
-struct nide{
+struct node{
 	int data;
 	node *left = nullptr, *right = nullptr;
 };
@@ -34,32 +34,112 @@ struct node* newNode(int data){
 
 	return temp;
 }
+int N =6;
+int mat[6][6] = {{ 0, 0, 0, 0, 0, 0 },
+			        { 1, 0, 0, 0, 1, 0 },
+			        { 0, 0, 0, 1, 0, 0 },
+			        { 0, 0, 0, 0, 0, 0 },
+			        { 0, 0, 0, 0, 0, 0 },
+			        { 1, 1, 1, 1, 1, 0 }
+    			};
 
-int int mat[6][6] = {{ 0, 0, 0, 0, 0, 0 },
-        { 1, 0, 0, 0, 1, 0 },
-        { 0, 0, 0, 1, 0, 0 },
-        { 0, 0, 0, 0, 0, 0 },
-        { 0, 0, 0, 0, 0, 0 },
-        { 1, 1, 1, 1, 1, 0 }
-    };
+node * maketree(){
 
-node * make_tree(){
+  unordered_map < int , pair < node * , bool > > m;
 
-	unordered_map<int, pair<node*, bool> > m;
+  pair < node* , bool > temp;
+  node * root = nullptr;
 
-	pait<node*, bool> temp;
+  for(int i = 0;i<N;i++)
+  {
+    for(int j = 0;j<N;j++)
+    {
+      
+      if(mat[i][j])
+      {
+        if(m.find(j) != m.end())
+        {
+          if(m[j].second == false)
+          {
+            if(m.find(i) != m.end())
+            {
+              if(m[i].first->left == nullptr)
+              {
+                m[i].first->left = m[j].first;
+                m[j].second = true;
+              }
+              else if(m[i].first->right == nullptr)
+              {
+                m[i].first->right = m[j].first;
+                m[j].second = true;
+              }
+            }
+            else
+            {
+              node * Node = newNode(i);
 
-	for(int i=0; i<6;i++){
-		for(int j=0; j<6; j++){
+              Node->left = m[j].first;
 
-			if(mat[i][j]){
+              m[i] = make_pair(Node,false);
 
-				if(m.find(j) != m.end()){
+              root = Node;
+            }
+          }
 
-					if()
+        }
+        else
+        {
+          if(m.find(i) != m.end())
+          {
+            if(m[i].first->left == nullptr)
+              {
+                m[i].first->left = newNode(j);
+                m[j] = make_pair(m[i].first->left,true);
+              }
+            else if(m[i].first->right == nullptr)
+              {
+                m[i].first->right = newNode(j);
+                m[j] = make_pair(m[i].first->right,true);
+              }
+          }
+          else
+          {
+            node * Node = newNode(i);
 
-				}
-			}
-		}
-	}
+            Node->left = newNode(j);
+
+            m[i] = make_pair(Node,false);
+            m[j] = make_pair(m[i].first->left,true);
+
+            root = Node;
+          }
+        }
+      }
+    }
+  }
+
+  return root;
+}
+
+void printInorder(node* root)
+{
+    if (root == nullptr)
+        return;
+
+    printInorder(root->left);
+    
+    cout<<root->data<<" ";
+
+    printInorder(root->right);
+
+ }
+
+
+int main(){
+
+	node *root = maketree();
+	printInorder(root);
+
+	return 0;
+
 }
