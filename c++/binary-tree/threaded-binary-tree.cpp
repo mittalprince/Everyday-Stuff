@@ -1,3 +1,15 @@
+/* 
+Convert a Binary Tree to Threaded binary tree | Set 2 (Efficient)
+
+Idea of Threaded Binary Tree is to make inorder traversal faster and do it
+ without stack and without recursion. In a simple threaded binary tree, the NULL 
+ right pointers are used to store inorder successor. Where-ever a right pointer is NULL, 
+ it is used to store inorder successor.
+
+Problem statement https://www.geeksforgeeks.org/convert-binary-tree-threaded-binary-tree-set-2-efficient/
+
+*/
+
 #include <iostream>
 #include <vector>
 
