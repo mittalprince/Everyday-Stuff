@@ -1,5 +1,5 @@
 /* 
-Count subtrees that sum up to a given value x
+	Count subtrees that sum up to a given value x
 
 Given a binary tree containing n nodes. The problem is to count subtress 
 having total node’s data sum equal to a given value x.
