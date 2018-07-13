@@ -10,7 +10,7 @@ var passport = require('passport');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://mittalprince:prince25@ds235181.mlab.com:35181/example_1',function(){
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds235181.mlab.com:35181/<databasename>',function(){
     console.log('connected to mongodb');
 });
 
