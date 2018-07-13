@@ -1,5 +1,5 @@
 
-## uthenticating Node.js Applications using Passport
+## Authenticating Node.js Applications using Passport
 
 ### What is Passport.js? 
 
