@@ -26,6 +26,7 @@ node* newNode(int data){
 	return temp;
 }
 
+// function to calculate the height for a given node
 int height(node *root){
 
 	if(root == nullptr)
@@ -34,6 +35,8 @@ int height(node *root){
 	return root->height;
 }
 
+
+//Utility function to calculate tha balance factor for a given node
 int get_balance_factor(node *root){
 
 	if(root == nullptr)
@@ -42,6 +45,8 @@ int get_balance_factor(node *root){
 	return height(root->left) - height(root->right);
 }
 
+
+//Utility function to perform right rotation
 node* right_rotate(node *z){
 
 	node *y = z->left;
@@ -56,6 +61,8 @@ node* right_rotate(node *z){
 	return y;
 }
 
+
+//Utility function to perform left rotation
 node *left_rotate(node *z){
 
 	node *y = z->right;
@@ -70,6 +77,8 @@ node *left_rotate(node *z){
 	return y;
 }
 
+
+//Function to insert node in AVL Tree
 node* insert(node *root, int key){
 
 	if(root == nullptr)
@@ -83,21 +92,29 @@ node* insert(node *root, int key){
 
 	else return root;
 
+	//Calculate height at each node and update height of the ancesstor node
 	root->height = max(height(root->left), height(root->right)) + 1;
 
+
+	//calculate balance factor at each node to check whether its balanced or not
 	int balance_factor = get_balance_factor(root);
 
+
+	//Left Left Case
 	if(balance_factor > 1 && key < root->left->data)
 		return right_rotate(root);
 
+	//Left Right Case
 	if(balance_factor > 1 && key > root->left->data){
 		root->left = left_rotate(root->left);
 		return right_rotate(root);
 	}
 
+	//Right Right Case
 	if(balance_factor < -1 && key > root->right->data)
 		return left_rotate(root);
 
+	//Right Left Case
 	if(balance_factor < -1 && key < root->right->data){
 		root->right = right_rotate(root->right);
 		return left_rotate(root);
@@ -106,6 +123,8 @@ node* insert(node *root, int key){
 	return root;
 }
 
+
+//Utility function to print preorder
 void preorder(node *root){
 	if(root == nullptr)
 		return;
