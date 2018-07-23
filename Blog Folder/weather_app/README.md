@@ -63,6 +63,7 @@ node server.js
 when you hit enter, you will get "``` Server is listening on 8000 port ```", open your browser and visit "```localhost:8000 ```", you should see Hello World!.
 
 ![First](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project1.png)
+
 Awesome! we have created a server using Node.js and Express!
 
 ### Setting Up Index View
@@ -134,9 +135,7 @@ app.get('/', function(req, res){
 
 Now again start your server using `node server.js`  and open browser, visit `localhost://8000` and you should see our `index.ejs` file. 
 
-<div class="row">
-        <img class="responsive-img col s12" src="/images/weather/project3.png">
-</div>
+![Second](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project3.png)
 
 #### Setting Up Post Route
 
@@ -291,17 +290,11 @@ We need to make some changes in `index.ejs` file to handle these scenarios. Add 
 ```
 Here’s what your `index.ejs` should look like:
 
-<div class="row">
-        <img class="responsive-img col s12" src="/images/weather/project2.png">
-</div>
+![Third](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project2.png)
 
 Great! we have done our project. Now start your server and open browser. Visit `localhost://8000` and enter city name, you should see the weather appear on your screen! It should be like this:
 
-<div class="row">
-        <img class="responsive-img col s12" src="/images/weather/project4.png">
-</div>
-
-
+![Fourth](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project4.png)
 
 #### Conclusion
 
