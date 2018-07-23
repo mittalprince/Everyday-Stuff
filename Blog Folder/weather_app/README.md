@@ -62,7 +62,7 @@ node server.js
 ```
 when you hit enter, you will get "``` Server is listening on 8000 port ```", open your browser and visit "```localhost:8000 ```", you should see Hello World!.
 
-![First](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog Folder/weather_app/images/project1.png)
+![First](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project1.png)
 Awesome! we have created a server using Node.js and Express!
 
 ### Setting Up Index View
