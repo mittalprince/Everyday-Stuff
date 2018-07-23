@@ -137,7 +137,20 @@ Now again start your server using `node server.js`  and open browser, visit `loc
 
 ![Second](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project3.png)
 
-Next we will set post route.
+Real quick, here’s what our file structure should look like thus far:
+
+``` 
+  | -- weather-app
+    | -- node_modules
+    | -- public
+      | -- style.css
+    | -- views
+      | -- index.ejs
+    | -- package-lock.json
+    | -- package.json
+    | -- server.js
+```
+
 
 #### Setting Up Post Route
 
@@ -294,9 +307,9 @@ Here’s what your `index.ejs` should look like:
 
 ![Third](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project2.png)
 
-Great! we have done our project. Now start your server and open browser. Visit `localhost://8000` and enter city name, you should see the weather appear on your screen! It should be like this:
+Great! we have done our project. In this article we have just built a website that makes API call and responds to the clients in real time! Now start your server and open browser. Visit `localhost://8000` and enter city name, you should see the weather appear on your screen! It should be like this:
 
 ![Fourth](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project4.png)
 
-In this article we have just built a website that makes API call and responds to the clients in real time! 
+
 
