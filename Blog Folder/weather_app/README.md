@@ -1,4 +1,4 @@
-##### Weather Website using Nodejs, Express
+## Weather Website using Nodejs, Express
 
 In this tutorial we will learn to build a simple web app where users can type city name and get real-time weather data on screen using Nodejs, Express, OpenWeather.
 
