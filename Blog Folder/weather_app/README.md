@@ -1,5 +1,8 @@
 ## Weather Website using Nodejs, Express
 
+<div class="row">
+        <img class="responsive-img col s12" src="/images/cover.jpg">
+</div>
 In this tutorial we will learn to build a simple web app where users can type city name and get real-time weather data on screen using Nodejs, Express, OpenWeather.
 
 You may see the live demo of what we are building. Check out the [Live Demo](https://fathomless-hamlet-64169.herokuapp.com/). 
@@ -61,6 +64,10 @@ Now we can test our sever by writting the follwoing command:
 node server.js
 ```
 when you hit enter, you will get "``` Server is listening on 8000 port ```", open your browser and visit "```localhost:8000 ```", you should see Hello World!.
+
+<div class="row">
+        <img class="responsive-img col s12" src="/images/project1.png">
+</div>
 
 Awesome! we have created a server using Node.js and Express!
 
@@ -132,6 +139,10 @@ app.get('/', function(req, res){
 >When working with templating language, we use `res.render` to render our view, which send the equivalent HTML to client.
 
 Now again start your server using `node server.js`  and open browser, visit `localhost://8000` and you should see our `index.ejs` file.	
+
+<div class="row">
+        <img class="responsive-img col s12" src="/images/project3.png">
+</div>
 
 #### Setting Up Post Route
 
@@ -286,7 +297,19 @@ We need to make some changes in `index.ejs` file to handle these scenarios. Add 
 ```
 Here’s what your `index.ejs` should look like:
 
-Great! we have done our project. Now start your server and open browser. Visit `localhost://8000` and enter city name, you should see the weather appear on your screen!
+<div class="row">
+        <img class="responsive-img col s12" src="/images/project2.png">
+</div>
+
+Great! we have done our project. Now start your server and open browser. Visit `localhost://8000` and enter city name, you should see the weather appear on your screen! It should be like this:
+
+<div class="row">
+        <img class="responsive-img col s12" src="/images/project4.png">
+</div>
+
+
 
 #### Conclusion
+
+In this article we have just built a website that makes API call and responds to the clients in real time! 
 
