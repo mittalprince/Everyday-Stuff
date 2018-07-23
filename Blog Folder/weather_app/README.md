@@ -1,8 +1,7 @@
 ## Weather Website using Nodejs, Express
 
-<div class="row">
         <img class="responsive-img col s12" src="/images/cover.jpg">
-</div>
+        
 In this tutorial we will learn to build a simple web app where users can type city name and get real-time weather data on screen using Nodejs, Express, OpenWeather.
 
 You may see the live demo of what we are building. Check out the [Live Demo](https://fathomless-hamlet-64169.herokuapp.com/). 
@@ -15,7 +14,7 @@ You may see the live demo of what we are building. Check out the [Live Demo](htt
 
 ### Project Setup 
 
->All the code from this article is available for download on [GitHub](https://github.com/mittalprince/Weather_App).
+>All the code from this article is available for download on [GitHub](https://github.com/mittalprince/Everyday-Stuff/tree/master/Blog%20Folder/weather_app).
 
 Once all the prerequisites software is set up, we can start our project. First create an empty directory named `weather-app` and open the terminal and write the following command for node app.
 
@@ -27,7 +26,7 @@ Within our `weather-app` directory, create a file named `server.js`.
 
 ### Creating Our Server
 
-First thing we need to do is get our server up and running. For this we will use [Express]. It is a minimalist web framework for [Node.js] that deals with exploring various code with which we need on a frequent basis. Express make it very east to create and run a web server with Node.
+First thing we need to do is get our server up and running. For this we will use [Express](https://expressjs.com/). It is a minimalist web framework for [Node.js](https://nodejs.org/en/) that deals with exploring various code with which we need on a frequent basis. Express make it very east to create and run a web server with Node.
 
 To install Express, write the following command in terminal:
 
@@ -43,12 +42,12 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req,res){
-	res.send('Hello World!');
+  res.send('Hello World!');
 })
 
 app.set('port', (process.env.PORT || 8000));
 app.listen(app.get('port'), function(){
-	    console.log('Server listening on port ' +app.get('port'));
+      console.log('Server listening on port ' +app.get('port'));
 });
 ```
 
@@ -65,8 +64,14 @@ node server.js
 ```
 when you hit enter, you will get "``` Server is listening on 8000 port ```", open your browser and visit "```localhost:8000 ```", you should see Hello World!.
 
-<div class="row">
-        <img class="responsive-img col s12" src="/images/project1.png">
+<div class="row" >
+  <div class="col s12 m10 offset-m1">
+      <div class="card">
+         <div class="card-image">
+            <img src="/images/weather/project1.png">
+         </div>
+       </div>
+     </div>
 </div>
 
 Awesome! we have created a server using Node.js and Express!
@@ -120,7 +125,7 @@ EJS is accessed by default in the `views` directory. So create a `views` folder 
 
 ##### Adding CSS file
 
-To add css create `public/style.css`  file in root directory of project and add custom css ( You may copy css from [Github](https://github.com/mittalprince/Weather_App/blob/master/public/style.css) ).
+To add css create `public/style.css`  file in root directory of project and add custom css ( You may copy css from [Github](https://github.com/mittalprince/Everyday-Stuff/blob/master/Blog%20Folder/weather_app/public/style.css) ).
 
 Express would not allow access to this file by default, so we need to expose it with the following line of code:
 
@@ -133,22 +138,22 @@ Once you have done this, update the `app.get('/', ...)` function to render the i
 
 ```js
 app.get('/', function(req, res){
-	res.render('index');
+  res.render('index');
 })
 ```
 >When working with templating language, we use `res.render` to render our view, which send the equivalent HTML to client.
 
-Now again start your server using `node server.js`  and open browser, visit `localhost://8000` and you should see our `index.ejs` file.	
+Now again start your server using `node server.js`  and open browser, visit `localhost://8000` and you should see our `index.ejs` file. 
 
 <div class="row">
-        <img class="responsive-img col s12" src="/images/project3.png">
+        <img class="responsive-img col s12" src="/images/weather/project3.png">
 </div>
 
 #### Setting Up Post Route
 
 In `server.js` we have set a get route and create our server. But our application to work, we need a post route aw well. In `index.ejs` file, we have a submitting form which has `POST request` at `/` route: `<form action="/" method="post">`. So we set post route and using this we access the name of city provided by the user. For this we use an *Express Middleware*.
 
-Express can make a use of *Middleware* ( functions that have access to `req` and `res` bodies) in order to perform more advacned tasks. Here we are going to make use of the `body-parser` middleware. `body-parser` allows us to make use of the `key-value` pairs stored on the `req-body` object. In this case, we’ll be able to access the city name the user typed in on the client side.
+Express can make a use of *Middleware* ( functions that have access to `req` and `res` bodies) in order to perform more advanced tasks. Here we are going to make use of the `body-parser` middleware. `body-parser` allows us to make use of the `key-value` pairs stored on the `req-body` object. In this case, we’ll be able to access the city name the user typed in on the client side.
 
 To install `body-parser` write the follwoing command in terminal:
 
@@ -170,8 +175,8 @@ Finally, make the post request and using this we console the value of 'city' typ
 ```js
 
 app.post('/', function(req,res){
-	res.render('index');
-	console.log(req.body.city);
+  res.render('index');
+  console.log(req.body.city);
 })
 ```
 Lets test it by restarting the server using `node server.js` command. Open your browser and visit `localhost://8000`, type city name and hit enter. If you go back to your command prompt (terminal) you should see the city name. Awesome we have successfully passed data from client side to server.
@@ -196,11 +201,11 @@ Once installed, require package and add the starter code:
 var request = require('request');
 
 request(url, function(err, res, body){
-	if(err){
-		console.log('Error: ', err);
-	} else{
-		console.log('Body: ', body);
-	}
+  if(err){
+    console.log('Error: ', err);
+  } else{
+    console.log('Body: ', body);
+  }
 });
 ```
 In above code first we require the request package, then we pass a target URL and request returns a callback function with three arguments: `err`, `res`, `body`. Then we check error in out request, If it's found console errors otherwise console the entire contents of respone body.
@@ -270,13 +275,13 @@ request(url, function (err, response, body) {
   });
 });
 ```
-Lets understand what we have done. First we access the city name entered by user using `re.body.city`, then create a `url` string, using which we make our api call.When we receive our callback, the first thing we’re going to do is check for an error. If we have an error, we’re going to render our index page. But notice that I’ve also added in a second argument. `res.render` has an optional second argument, an object where we can specify properties to be handled by our view ( index.ejs ). 
+Lets understand what we have done. First we access the city name entered by user using `re.body.city`, then create a `url` string, using which we make our api call.When we receive our callback, the first thing we’re going to do is check for an error. If we have an error, we’re going to render our index page. But notice that I’ve also added in a second argument. `res.render` has an optional second argument, an object where we can specify properties to be handled by our views ( index.ejs ). 
 
-Now when we have no API error, we can parse our JSON into JS Object. Then we check for `weather.main == undefined`. This will only happen when user entered a string which isn't a city ('1', 'abcd'). In this instance, we’ll render the index view, and we’ll also pass back an error.
+Now when we have no API error, we can parse our JSON into JS Object. Then we check for `(weather.main == undefined)`. This will only happen when user entered a string which isn't a city ('1', 'abcd'). In this instance, we’ll render the index view, and we’ll also pass back an error.
 
-If `weather.main != undefined` then we can finally send back weather to client. 
+If `(weather.main != undefined)` then we can finally send back weather to client. 
 
-Last thing to do at this point is update `index.ejs`. Make use of all those variables we sent back with our `res.render`. As these variables are not available at client side, here EJS works. We have total three possible scenarios :
+Last thing to do at this point is update `index.ejs`. Make use of all these variables we sent back with our `res.render`. As these variables are not available at client side, here EJS works. We have total three possible scenarios :
 
 ```bash
  1.   {weather: null, error: null}
@@ -298,13 +303,13 @@ We need to make some changes in `index.ejs` file to handle these scenarios. Add 
 Here’s what your `index.ejs` should look like:
 
 <div class="row">
-        <img class="responsive-img col s12" src="/images/project2.png">
+        <img class="responsive-img col s12" src="/images/weather/project2.png">
 </div>
 
 Great! we have done our project. Now start your server and open browser. Visit `localhost://8000` and enter city name, you should see the weather appear on your screen! It should be like this:
 
 <div class="row">
-        <img class="responsive-img col s12" src="/images/project4.png">
+        <img class="responsive-img col s12" src="/images/weather/project4.png">
 </div>
 
 
