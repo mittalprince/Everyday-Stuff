@@ -136,6 +136,9 @@ app.get('/', function(req, res){
 Now again start your server using `node server.js`  and open browser, visit `localhost://8000` and you should see our `index.ejs` file. 
 
 ![Second](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project3.png)
+
+Next we will set post route.
+
 #### Setting Up Post Route
 
 In `server.js` we have set a get route and create our server. But our application to work, we need a post route aw well. In `index.ejs` file, we have a submitting form which has `POST request` at `/` route: `<form action="/" method="post">`. So we set post route and using this we access the name of city provided by the user. For this we use an *Express Middleware*.
@@ -294,7 +297,6 @@ Here’s what your `index.ejs` should look like:
 Great! we have done our project. Now start your server and open browser. Visit `localhost://8000` and enter city name, you should see the weather appear on your screen! It should be like this:
 
 ![Fourth](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project4.png)
-#### Conclusion
 
 In this article we have just built a website that makes API call and responds to the clients in real time! 
 
