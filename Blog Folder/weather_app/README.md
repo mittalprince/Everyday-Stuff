@@ -1,7 +1,5 @@
 ## Weather Website using Nodejs, Express
 
-        <img class="responsive-img col s12" src="/images/cover.jpg">
-        
 In this tutorial we will learn to build a simple web app where users can type city name and get real-time weather data on screen using Nodejs, Express, OpenWeather.
 
 You may see the live demo of what we are building. Check out the [Live Demo](https://fathomless-hamlet-64169.herokuapp.com/). 
@@ -64,16 +62,7 @@ node server.js
 ```
 when you hit enter, you will get "``` Server is listening on 8000 port ```", open your browser and visit "```localhost:8000 ```", you should see Hello World!.
 
-<div class="row" >
-  <div class="col s12 m10 offset-m1">
-      <div class="card">
-         <div class="card-image">
-            <img src="/images/weather/project1.png">
-         </div>
-       </div>
-     </div>
-</div>
-
+![First](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/images/project1.png)
 Awesome! we have created a server using Node.js and Express!
 
 ### Setting Up Index View
