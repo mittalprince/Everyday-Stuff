@@ -1,0 +1,97 @@
+/*  
+Find the largest BST subtree in a given Binary Tree | Set 1
+
+Given a Binary Tree, write a function that returns the size of the largest subtree which is also a Binary Search Tree (BST). If the complete Binary Tree is BST, then return the size of whole tree.
+
+Examples:
+
+Input: 
+      5
+    /  \
+   2    4
+ /  \
+1    3
+
+Output: 3 
+The following subtree is the maximum size BST subtree 
+   2  
+ /  \
+1    3
+
+Problem statement link https://www.geeksforgeeks.org/find-the-largest-subtree-in-a-tree-that-is-also-a-bst/
+
+*/
+
+#include <iostream>
+#include <utility>
+#include <climits>
+
+using namespace std;
+
+struct node {
+    int data;
+    int size = 1;
+    node* left = nullptr;
+    node* right = nullptr;
+};
+
+typedef pair<int, int> Pair; 
+int max_size = 1;
+
+node* newNode(int data) {
+    node* temp = new node;
+    temp->data = data;
+    return temp;
+}
+
+Pair subtreeBST(node* root) {
+    if(root == nullptr)
+        return make_pair(INT_MIN, INT_MAX);
+    
+    Pair l = subtreeBST(root->left);
+    Pair r = subtreeBST(root->right);
+
+    if(root->left && root->data > l.first)
+        root->size += root->left->size;
+
+    if(root->right && root->data < r.second)
+        root->size += root->right->size;
+
+    max_size = (root->size > max_size ? root->size : max_size);
+
+    return make_pair(
+        max(root->data, max(l.first, r.first)), 
+        min(root->data, min(r.second, l.second))
+    );
+}
+
+int main(){
+
+	/* Let us construct the following Tree
+          50
+       /      \
+     10        60
+    /  \       /  \
+   5   20    55    70
+            /     /  \
+          45     65    80
+  */
+ 
+    node *root                = newNode(50);
+    root->left                = newNode(10);
+    root->right               = newNode(60);
+    root->left->left          = newNode(5);
+    root->left->right         = newNode(20);
+    root->right->left         = newNode(55);
+    root->right->left->left   = newNode(45);
+    root->right->right        = newNode(70);
+    root->right->right->left  = newNode(65);
+    root->right->right->right = newNode(80);
+
+    subtreeBST(root);
+
+    cout<<max_size<<endl;
+
+    return 0;
+}
+
