@@ -53,7 +53,7 @@ Here we use `app.get('/', ...)` to specifically focus on root URL. If we vist ro
 
 The `app.listen(...)` shows we are creating a server that is listening on port which we will provide.
 
-In above code we use process.env.PORT to set the port to the environment port variable if it exists. Otherwise, we’ll default to 8000, which is the port we’ll be using locally. This gives you enough flexibility to switch from development, directly to a production environment where the port might be set by a service provider like, for instance, [Heroku](https://dashboard.heroku.com/).
+In above code we use `process.env.PORT` to set the port to the environment port variable if it exists. Otherwise, we’ll default to 8000, which is the port we’ll be using locally. This gives you enough flexibility to switch from development, directly to a production environment where the port might be set by a service provider like, for instance, [Heroku](https://dashboard.heroku.com/).
 
 Now we can test our sever by writting the follwoing command:
 
@@ -107,7 +107,6 @@ EJS is accessed by default in the `views` directory. So create a `views` folder 
         </form>
     </fieldset>
 
-
 </div>
 </body>
 </html>
@@ -137,7 +136,7 @@ Now again start your server using `node server.js`  and open browser, visit `loc
 
 ![Second](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project3.png)
 
-Real quick, here’s what our file structure should look like thus far:
+Real quick, here’s what our file structure should look like :
 
 ``` 
   | -- weather-app
@@ -189,6 +188,8 @@ Lets test it by restarting the server using `node server.js` command. Open your 
 For this project we’ll be using the Free ‘Current Weather’ API. Head on over to this [link](https://home.openweathermap.org/) and sign up for an account. All you need is an email address and password.
 
 Once signed in, select the API keys tab. From Here you can Create a Key on the right hand side of the page. Enter a name (anything works) and select generate. Your API Key will appear on the left. Copy this key for later. Awesome now we have our API key.
+
+![Fifth](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Blog%20Folder/weather_app/images/project5.png)
 
 ##### Making API call
 
