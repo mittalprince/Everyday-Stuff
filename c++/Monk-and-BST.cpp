@@ -1,98 +1,95 @@
-#include<iostream>
-#include<vector>
-#include<unordered_map>
-#include<cmath>
-#include<string>
+/* Problem statement link  https://www.hackerearth.com/practice/data-structures/trees/binary-search-tree/practice-problems/algorithm/monk-and-bst/  */
+
+#include <iostream>
+#include <cmath>
+#include <string>
+
+typedef unsigned long long ll ;
 
 using namespace std;
 
-struct node{
-    long long data;
-    node *left = nullptr, *right =nullptr;
-};
+void printNode(ll t, ll x, ll k) {
+    ll l = ceil( log((double)k + 1.0) / log(2.0) ), a;
 
-node* newNode(long long key){
-    node *temp =new node;
-    temp->data = key;
-    
-    return temp;
+    if(t - l == 0)
+        a = x;
+    else 
+        a = x + pow(2, t-l-1) - 1;
+        
+    ll d = pow(2, t-l);
+    ll n = k - pow(2, l-1) + 1;
+
+    cout<<(a + (n-1)*d);
 }
 
-unordered_map<long long, string > m;
+void printPath(ll start, ll end, ll& val, ll& x, string& s) {
+    if(start >= end)
+        return;
+    
+    ll mid = (start + end) / 2;
+    ll temp = mid / 2;
 
-node* sortedarray(vector<long long > arr, long long start, long long end, string str, vector<long long>& v){
-    
-    if(start > end)
-        return nullptr;
-    
-    long long mid = (start+end)/2;
-    
-    node *root = newNode(arr[mid]);
-    if(m.find(arr[mid]) == m.end()){
-        if(str == "")
-            m[arr[mid]] = "root";
-        else m[arr[mid]] = str;
+    if(x+temp > val) {
+        s = s + "l";
+        printPath(start, mid-1, val, x, s);
     }
     
-    v.push_back(arr[mid]);
+    else if(x+temp < val) {
+        s = s + "r";
+        printPath(mid+1, end, val, x, s);
+    }
     
-    root->left = sortedarray(arr, start, mid-1, str+'l', v);
-    root->right = sortedarray(arr, mid+1, end, str+'r', v);
-    
-    return root;
+    return;
 }
 
+ll findX(ll l, ll s) {
+    ll n = (pow(2, l) - 2) / 2;
+    double x = ( (2*s) - (pow(n, 2) * 2)+1 ) / ((2*n) + 1);
 
-long long find_a(long long s, long long n){
+    ll t = ceil(++x)/2;
+    //t = t+1;
     
-    return (((2*s)-(n*n*2))/(n+1));
+    return t;
 }
 
-int main(){
-    
+int main() {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    long long l,s,n,temp,q,type,index,val,N;
-    cin>>l>>s;
+    cin.tie(nullptr);
 
-    n = pow(2, l-1) - 1;
-    temp = find_a(s, n);
-    
-    temp = (temp & 1)? temp+1:temp+2;
-    
-    temp = temp>>1;
-    N= pow(2,l)-1;
-    vector<long long> arr(2*n+1);
-    
-    for(long long i=0;i<2*n; i=i+2){
-        arr[i]=temp;
-        arr[i+1]=temp;
-        temp++;
-    }
-    arr[N-1]=temp;
-    
-    string str = "";
-    vector<long long> v;
-    node *root = sortedarray(arr, 0, arr.size()-1, str, v);
+    ll l, s, q,x;
 
-    for(auto& y:v)
+    cin>>l>>s>>q;
+    
+    if(l == 1)
     {
-        cout<<y<<" ";
+        x = s+1;
     }
-    cout<<endl;
-    
-    cin>>q;
-    while(q--){
-        cin>>type;
-        if(type==0){
-            cin>>val;
-            cout<<m[val]<<endl;
-        }
-        else if(type==1){
-            cin>>index;
-            cout<<v.at(index-1)<<endl;
-        }
+    else
+    {
+        x = findX(l, s);
     }
-    
+    while(q--) {
+        ll type, k;
+
+        cin>>type>>k;
+
+        ll n = pow(2, l) - 1;
+
+        string str = "";
+
+        if(type == 0) {
+            if( ((n-1)/4)+x == k )
+                cout<<"root";
+            else {
+                printPath(0, n-1, k, x, str);
+                cout<<str;
+            }
+        }
+        else
+            printNode(l, x, k);
+
+        cout<<endl;
+    }
+
     return 0;
 }
