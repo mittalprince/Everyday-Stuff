@@ -92,4 +92,12 @@ alexa.registerHandlers(handlers);
 ```js
 alexa.execute();
 ```
+#### Collecting User Input
 
+>A slot is an argument to an intent that gives Alexa more information about that request. For example: “Alexa, ask History Buff what happened on June third”. In this statement, “June third” is the value of a date slot that interprets the request.
+
+* You can access user input values from Alexa's JSON request using the following:
+
+```js
+this.event.request.intent.slots.yourSlotName.value
+```
