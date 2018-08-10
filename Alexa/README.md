@@ -101,3 +101,4 @@ alexa.execute();
 ```js
 this.event.request.intent.slots.yourSlotName.value
 ```
+> Session attributes allow Alexa to remember and update user-provided details throughout a session. You can think of session attributes as being similar to variables that store information about the program, except values stored in session attributes persist throughout a session. 
