@@ -102,3 +102,15 @@ alexa.execute();
 this.event.request.intent.slots.yourSlotName.value
 ```
 > Session attributes allow Alexa to remember and update user-provided details throughout a session. You can think of session attributes as being similar to variables that store information about the program, except values stored in session attributes persist throughout a session. 
+
+* Session attributes are stored in the response that your skill receives from Alexa as a JSON.
+
+* We can create and edit attribute fields by accessing their key. Inside of the Lambda function, you can access session attribute values using `this.attributes` .
+
+```js
+this.attributes['yourAttribute'] = 'value';
+```
+
+* In the example above, we create a field in `attributes` and save the string `'value'` to it. `this` references the alexa object that's instantiated in the `export.handlers` function.
+
+> Like variables, session attributes hold values that we can change after we've created them.
