@@ -1,0 +1,345 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "popular facts",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "LanguageIntent",
+                    "slots": [
+                        {
+                            "name": "language",
+                            "type": "popularlanguage",
+                            "samples": [
+                                "i think it's {language}",
+                                "could it be {language}",
+                                "is it {language}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "it's {language}",
+                        "what about {language}",
+                        "it may be {language}",
+                        "{language}",
+                        "i think it's {language}",
+                        "could it be {language}",
+                        "is it {language}"
+                    ]
+                },
+                {
+                    "name": "NameIntent",
+                    "slots": [
+                        {
+                            "name": "username",
+                            "type": "AMAZON.US_FIRST_NAME"
+                        }
+                    ],
+                    "samples": [
+                        "i am {username}",
+                        "myself {username}",
+                        "my name is {username}",
+                        "{username}"
+                    ]
+                },
+                {
+                    "name": "SportIntent",
+                    "slots": [
+                        {
+                            "name": "sport",
+                            "type": "AMAZON.Sport"
+                        }
+                    ],
+                    "samples": [
+                        "{sport}",
+                        "it could be {sport}",
+                        "could it be {sport}",
+                        "what about {sport}",
+                        "i think it's {sport}",
+                        "it may be {sport}",
+                        "it is {sport}",
+                        "it's {sport}"
+                    ]
+                },
+                {
+                    "name": "ResIntent",
+                    "slots": [
+                        {
+                            "name": "sportandlanguage",
+                            "type": "sportandlanguage"
+                        }
+                    ],
+                    "samples": [
+                        "{sportandlanguage}"
+                    ]
+                },
+                {
+                    "name": "ContinueIntent",
+                    "slots": [
+                        {
+                            "name": "wantcontinue",
+                            "type": "wantcontinue"
+                        }
+                    ],
+                    "samples": [
+                        "i want to {wantcontinue}",
+                        "yes sure please {wantcontinue}",
+                        "yeah i want to {wantcontinue}",
+                        "yes {wantcontinue}"
+                    ]
+                },
+                {
+                    "name": "CancelIntent",
+                    "slots": [],
+                    "samples": [
+                        "just exit",
+                        "it want to exit"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "popularlanguage",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "js",
+                                "synonyms": [
+                                    "javascript"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "c"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "machine learning"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "c#",
+                                "synonyms": [
+                                    "c sharp"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "c++"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "css"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "html"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "python"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nodejs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "javascript"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "java"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ruby"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AMAZON.US_FIRST_NAME",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "archit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ankur"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rohit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rohit sethi"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prince mittal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rishabh"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prince"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AMAZON.Sport",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "table tennis"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "baseball"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "carrom"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hide and seek"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "football"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "badminton"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "basketball"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "soccer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cricket"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "sportandlanguage",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "language"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sport"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "wantcontinue",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "continue"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "LanguageIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "language",
+                            "type": "popularlanguage",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.392483792380.577695469201"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.392483792380.577695469201",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me a language"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.659995810452.213760689849",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Tell me your choice"
+                    }
+                ]
+            }
+        ]
+    }
+}
