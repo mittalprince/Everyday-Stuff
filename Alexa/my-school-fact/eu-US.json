@@ -1,0 +1,41 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my school",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "exit"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "exit"
+                    ]
+                },
+                {
+                    "name": "GetFactIntent",
+                    "slots": [],
+                    "samples": [
+                        "Tell me something",
+                        "Tell me a fact",
+                        "Give me a fact"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
