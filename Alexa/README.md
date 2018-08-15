@@ -126,3 +126,19 @@ this.attributes['yourAttribute'] = 'value';
 * A database holds and organizes information so that it can be easily accessed, managed, and updated. Databases save information sent from the frontend of our skill and then can respond with that information later. Our Lambda function manages that relationship in the backend.
 
 ![Second](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Alexa/images/dynamoDB.png)
+
+* The Alexa NodeJS SDK makes it simple to create a database table from within the Lambda function — it just takes one line of code: 
+
+```js
+alexa.dynamoDBTableName = 'YourTableName';
+```
+* Add above in `exports.handler` method since this is the first method that is executed when a user opens an Alexa skill.
+
+> all session attributes will automatically be written to the database when you call `this.emit(‘:responseReady’);` from within the intent handlers or when your session ends.
+
+* To explicitly save the `session attributes` , adding the following line to the `SessionEndedRequest` handler.
+
+```js
+this.emit(':saveState', true)
+```
+> DynamoDB is designed to support key:value storage, with the name of our attribute being the key and what we’ve set it to becoming its value. Use bracket notation.
