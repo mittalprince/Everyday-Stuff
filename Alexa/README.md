@@ -4,6 +4,10 @@
 
 * Learn to build [First Skill](https://www.codecademy.com/courses/learn-alexa-skills-kit/lessons/intro-to-alexa/exercises/connect-lambda-arn?action=resume_content_item&course_redirect=learn-alexa)
 
+## How Alexa works
+
+![First](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Alexa/images/alexa.png)
+
 ## Learn Lamba Function
 
 * One of the first things we will do is include the Alexa-SDK library in our Lambda function — this makes Alexa's core features available in our Lambda function. We do this with the following require() statement:
@@ -114,3 +118,11 @@ this.attributes['yourAttribute'] = 'value';
 * In the example above, we create a field in `attributes` and save the string `'value'` to it. `this` references the alexa object that's instantiated in the `export.handlers` function.
 
 > Like variables, session attributes hold values that we can change after we've created them.
+
+#### To use DynaomoDB 
+
+> Why we use it? Once you have session attributes that persist throughout a session, it’s helpful to save them to a database. The information that is saved within a session can be accessed in subsequent sessions.
+
+* A database holds and organizes information so that it can be easily accessed, managed, and updated. Databases save information sent from the frontend of our skill and then can respond with that information later. Our Lambda function manages that relationship in the backend.
+
+![Second](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Alexa/images/DynaomoDB.png)
