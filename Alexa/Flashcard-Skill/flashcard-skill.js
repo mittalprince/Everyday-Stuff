@@ -43,18 +43,25 @@ var handlers = {
   'SetMyLanguageIntent': function(){
 
     this.attributes['language'] = this.event.request.intent.slots.languages.value;
+    var language = this.attributes['language'];
+
+    if(language === 'Javascript' || language === 'ruby' || language === 'python'){
 
       if (this.attributes['language'] === 'JavaScript') {
         this.attributes['language'] = 'javascript';
       }
 
-      var language = this.attributes['language'];
-
       this.response
         .speak('Okay, I will ask you some questions about ' + language + '. Here is your first question. ' + AskQuestion(this.attributes))
         .listen(AskQuestion(this.attributes));
 
-      this.emit(':responseReady');
+      }
+
+    else{
+      this.response.speak('Please select valid langauge').listen('Tell me your response');
+    }
+
+    this.emit(':responseReady');
   },
 
   'AnswerIntent': function(){
