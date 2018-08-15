@@ -28,6 +28,7 @@
                         }
                     ],
                     "samples": [
+                        "{languages}",
                         "Test my {languages} knowledge",
                         "Practice {languages}"
                     ]
@@ -41,8 +42,34 @@
                         }
                     ],
                     "samples": [
+                        "{answer}",
                         "is it {answer}",
                         "I think it's {answer}"
+                    ]
+                },
+                {
+                    "name": "PlayAgainIntent",
+                    "slots": [
+                        {
+                            "name": "playagain",
+                            "type": "playagain"
+                        }
+                    ],
+                    "samples": [
+                        "please {playagain}",
+                        "{playagain}"
+                    ]
+                },
+                {
+                    "name": "StopGameIntent",
+                    "slots": [
+                        {
+                            "name": "stopgame",
+                            "type": "stopgame"
+                        }
+                    ],
+                    "samples": [
+                        "{stopgame}"
                     ]
                 }
             ],
@@ -103,6 +130,56 @@
                         {
                             "name": {
                                 "value": "length"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "playagain",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "play again"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sure"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yo"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ya"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yes"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "stopgame",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "exit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "never"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "no"
                             }
                         }
                     ]
