@@ -1,0 +1,113 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "codecademy flashcards",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SetMyLanguageIntent",
+                    "slots": [
+                        {
+                            "name": "languages",
+                            "type": "languages"
+                        }
+                    ],
+                    "samples": [
+                        "Test my {languages} knowledge",
+                        "Practice {languages}"
+                    ]
+                },
+                {
+                    "name": "AnswerIntent",
+                    "slots": [
+                        {
+                            "name": "answer",
+                            "type": "answer"
+                        }
+                    ],
+                    "samples": [
+                        "is it {answer}",
+                        "I think it's {answer}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "languages",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "javascript"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "python"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ruby"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "answer",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "lowercase"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "capitalized"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "console.log"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "print"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "puts"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "len"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "length"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
