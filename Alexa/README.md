@@ -125,4 +125,4 @@ this.attributes['yourAttribute'] = 'value';
 
 * A database holds and organizes information so that it can be easily accessed, managed, and updated. Databases save information sent from the frontend of our skill and then can respond with that information later. Our Lambda function manages that relationship in the backend.
 
-![Second](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Alexa/images/DynaomoDB.png)
+![Second](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Alexa/images/dynaomoDB.png)
