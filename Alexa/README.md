@@ -8,7 +8,7 @@
 
 ![First](https://raw.githubusercontent.com/mittalprince/Everyday-Stuff/master/Alexa/images/alexa.png)
 
-## Learn Lamba Function
+## Learn Lambda Function
 
 * One of the first things we will do is include the Alexa-SDK library in our Lambda function — this makes Alexa's core features available in our Lambda function. We do this with the following require() statement:
 
@@ -119,7 +119,7 @@ this.attributes['yourAttribute'] = 'value';
 
 > Like variables, session attributes hold values that we can change after we've created them.
 
-#### To use DynaomoDB 
+#### To use DynamoDB 
 
 > Why we use it? Once you have session attributes that persist throughout a session, it’s helpful to save them to a database. The information that is saved within a session can be accessed in subsequent sessions.
 
