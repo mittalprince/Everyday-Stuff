@@ -58,7 +58,7 @@ int getCount(int arr[], int n){
 	for(i=n-1;i>=0;i--){
 		conversion += getSum(BIT, arr[i]-1);
 
-		updateBIT(BIT, n, arr[i], 1);
+		updateBIT(BIT, max, arr[i], 1);
 	}
 
 	return conversion;
