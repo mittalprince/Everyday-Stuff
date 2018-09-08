@@ -1,3 +1,7 @@
+/* Problem statement link --> https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/practice-problems/algorithm/agitated-chandan/
+
+*/
+
 #include<iostream>
 #include<vector>
 #include<list>
@@ -27,15 +31,15 @@ ll DFS(vector<node> &graph, ll index, ll &Max){
         if(!graph[y.first].visited){
             ll ans = DFS(graph, y.first, Max);
             ans += y.second;
-        }
-        
-        if(ans > temp1){
-            temp2 = temp1;
-            temp1 = ans;
-        }
-        
-        else if(ans > temp2){
-            temp2 = ans;
+            
+            if(ans > temp1){
+                temp2 = temp1;
+                temp1 = ans;
+            }
+            
+            else if(ans > temp2){
+                temp2 = ans;
+            }
         }
     }
     
@@ -44,11 +48,45 @@ ll DFS(vector<node> &graph, ll index, ll &Max){
 }
 
 ll cost(ll distance){
+
     if(distance < 100)
         return 0;
+
     else if(distance >10000)
         return 10000;
+
     else if(distance > 1000)
         return 1000;
+    
     else return 100;
+}
+
+ll printAns(vector<node> graph){
+    ll Max = 0;
+    DFS(graph, 0, Max);
+
+    return Max;
+
+}
+
+int main(){
+
+    ll t,n,u,v,w;
+    cin>>t;
+    while(t--){
+        cin>>n;
+        vector<node> graph(n);
+        n--;
+        while(n--){
+            cin>>u>>v>>w;
+            addEdge(graph,--u, --v, w);
+        }
+
+        ll Max = printAns(graph);
+        ll Cost = cost(Max);
+
+        cout<<Cost<<" "<<Max<<endl;
+    }
+    
+    return 0;
 }
