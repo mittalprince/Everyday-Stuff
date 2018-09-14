@@ -24,7 +24,7 @@ vector<ds> arr;
 void initialize(int n){
 
 	for(int i=0; i<n; i++){
-		el temp;
+		ds temp;
 		temp.val = i;
 		temp.size = 1;
 
@@ -33,7 +33,7 @@ void initialize(int n){
 }
 
 int root(int i){
-	while(arr[i] != i){
+	while(arr.at(i).val != i){
 		arr.at(i).val = arr.at(arr.at(i).val).val;
 		i = arr.at(i).val;
 	}
@@ -69,14 +69,19 @@ bool find(int a, int b){
 
 int kruskal(vector<node> &graph){
 	int mincost = 0;
+	vector<node> result;
 
 	for(auto i: graph){
 		if(!find(i.edge.first, i.edge.second)){
+			result.push_back(i);
 			Union(i.edge.first, i.edge.second);
 			mincost += i.weight;
 		}
 	}
 
+	for(auto y: result){
+		cout<<y.edge.first<<" -- "<<y.edge.second<<" == "<<y.weight<<endl;
+	}
 	return mincost;
 }
 
@@ -85,11 +90,11 @@ int main(){
 	int nodes, edges;
     cin>>nodes>>edges;
 
-    vector<node> graph(edges+1);
+    vector<node> graph(edges);
 
-    initialize(nodes+1);
+    initialize(nodes);
 
-    for(int i = 1; i <= edges; ++i) {
+    for(int i = 0; i < edges; ++i) {
         int x, y, w;
         cin>>x>>y>>w;
         graph.at(i).weight = w;
@@ -97,7 +102,7 @@ int main(){
     }
 
     sort(graph.begin(), graph.end(), comparator);
-    cout<<kruskal(graph)<<endl;
+    cout<<"Total cost "<<kruskal(graph)<<endl;
 }
 
 
