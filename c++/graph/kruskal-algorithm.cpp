@@ -103,6 +103,8 @@ int main(){
 
     sort(graph.begin(), graph.end(), comparator);
     cout<<"Total cost "<<kruskal(graph)<<endl;
+
+    return 0;
 }
 
 
