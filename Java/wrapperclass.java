@@ -3,20 +3,29 @@ import java.util.ArrayList;
 class wrapper{
 	public static void main(String agrs[]){
 
-		char ch = 'a';
+		int b = 10;
+		Integer intobj = new Integer(b);
 
-		Character Ch = ch; // autoboxing 
+		System.out.println("Integer Object Value "+ b);
 
-		System.out.println(Ch);
+		int iv = intobj;
 
-		ArrayList<Integer> arrayList = new ArrayList<Integer>();
-		arrayList.add(25); // autoboxing as 25 in int not Integer
+		System.out.println("Int Value "+iv);
 
-		System.out.println(arrayList.get(0));
+		// char ch = 'a';
 
-		char a = Ch; // unboxing
-		int num = arrayList.get(0); //unboxing
+		// Character Ch = ch; // autoboxing 
 
-		System.out.println(a+" "+num);  
+		// System.out.println(Ch);
+
+		// ArrayList<Integer> arrayList = new ArrayList<Integer>();
+		// arrayList.add(25); // autoboxing as 25 in int not Integer
+
+		// System.out.println(arrayList.get(0));
+
+		// char a = Ch; // unboxing
+		// int num = arrayList.get(0); //unboxing
+
+		// System.out.println(a+" "+num);  
 	}
 }
