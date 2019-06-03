@@ -247,7 +247,9 @@ So after adding this content when you again start the server and click on login/
 
 First we install passport using the following command"
 
-``` npm install passport --save
+``` 
+npm install passport --save
+
 ```
 
 In ``` app.js ``` require the passport and add following lines at the bottom to initialize the passport along with its session authentication middleware:
