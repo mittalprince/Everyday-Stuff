@@ -67,4 +67,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 > With the reactive approach you basically need to create new instances of the formcontrols and formcontrolgroups in your component. Reactive forms are also the best choice for building more complex forms and are better in case you have the intention to implement unit testing for your forms.
 
 
-> Reference [Reactive Form by alligator](https://alligator.io/angular/reactive-forms-introduction/), 
+> Reference [Reactive Form by alligator](https://alligator.io/angular/reactive-forms-introduction/), [Angular Tutorials](https://angular.io/guide/reactive-forms), [Blog](https://www.ryadel.com/en/angular-forms-template-driven-model-driven-reactive-pros-cons-tutorial-guide/).
