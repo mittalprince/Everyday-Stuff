@@ -46,11 +46,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 * Examples are login forms, reset password forms, forms to enter an
 
-
-
 ## Difference in Reactive and Template-Driven Form
 
-| Points             | REACTIVE                                  | TEMPLATE-DRIVEN                      |
+| *Points*            | *REACTIVE*                                 | *TEMPLATE-DRIVEN*                     |
 |--------------------|-------------------------------------------|--------------------------------------|
 | Setup (form model) | More explicit, created in component class | Less explicit, created by directives |
 | Data model         | Structured                                | Unstructured                         |
@@ -66,5 +64,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 > With the reactive approach you basically need to create new instances of the formcontrols and formcontrolgroups in your component. Reactive forms are also the best choice for building more complex forms and are better in case you have the intention to implement unit testing for your forms.
 
+> Form Control State
 
-> Reference [Reactive Form by alligator](https://alligator.io/angular/reactive-forms-introduction/), [Angular Tutorials](https://angular.io/guide/reactive-forms), [Blog](https://www.ryadel.com/en/angular-forms-template-driven-model-driven-reactive-pros-cons-tutorial-guide/).
+| *State*                            | *Class if true* | *Class if false* |
+|----------------------------------|---------------|----------------|
+| The control has been visited.    | ng-touched    | ng-untouched   |
+| The control's value has changed. | ng-dirty      | ng-pristine    |
+| The control's value is valid.    | ng-valid      | ng-invalid     |
+
+* `dirty` is `true` if the user has changed the value of the control.
+
+* A controls is said to be `touched` if the the user focused on the control and then focused on something else. For example by clicking into the control and then pressing tab or clicking on another control in the form.
+
+> The difference between `touched` and `dirty` is that with touched the user doesn’t need to actually change the value of the input control.
+
+* `valid` is `true` of the field doesn’t have any validators or if all the validators are passing.
+
+> Reference [Reactive Form by alligator](https://alligator.io/angular/reactive-forms-introduction/), [Angular Tutorials](https://angular.io/guide/reactive-forms), [Blog](https://www.ryadel.com/en/angular-forms-template-driven-model-driven-reactive-pros-cons-tutorial-guide/), [CodeCrdft](https://codecraft.tv/courses/angular/forms/model-driven-validation/), [Custom Validator](https://dzone.com/articles/how-to-create-custom-validators-in-angular).
