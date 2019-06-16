@@ -6,7 +6,6 @@ import { templateDrivenComponent } from './template-driven/template-driven.compo
 import { landingComponent } from './landing/landing.component'
 
 const routes: Routes = [
-  {path: '', redirectTo:'', pathMatch: 'full'},
   {path:'', component:landingComponent},
   {path:'reactive', component: reactiveComponent},
   {path:'template-driven', component: templateDrivenComponent}
