@@ -12,11 +12,23 @@
                     <div class="uk-card-body">
                         <form>
                             <div class="uk-margin-small">
-                                <label class="uk-from-label">Email</label>
-                                <div class="uk-inline uk-width-1-1@s">
-                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon:mail"></span>
-                                    <input type="email" [(ngModel)]="data.email" name="email" required #email="ngModel"
-                                    placeholder="Enter Email" class="uk-border-rounded uk-input" email> 
+                                <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-1-2@s">
+                                        <label class="uk-form-label" for="">First Name</label>
+                                        <input type="text" class="uk-input uk-border-rounded" placeholder="First Name" required
+                                        [(ngModel)]="data.name" name="name" #name="ngModel">
+                                        <div *ngIf="name.invalid && (name.touched || name.dirty)">
+                                            <p *ngIf="name.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-2@s">
+                                        <label class="uk-form-label" for="">Last Name</label>
+                                        <input type="text" class="uk-input uk-border-rounded" placeholder="Last Name" required
+                                        [(ngModel)]="data.lname" name="lname" #lname="ngModel">
+                                        <div *ngIf="lname.invalid && (lname.touched || lname.dirty)">
+                                            <p *ngIf="lname.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -25,22 +37,24 @@
                                 <div class="uk-inline uk-width-1-1@s">
                                     <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: user"></span>
                                     <input type="text" [(ngModel)]="data.username" name="username" #username="ngModel"
-                                    placeholder="Username" class="uk-input uk-border-rounded" required>
+                                    placeholder="Username" class="uk-input uk-border-rounded" required minlength="5">
+                                </div>
+                                <div *ngIf="username.invalid && (username.touched || username.dirty)">
+                                    <p *ngIf="username.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                    <p *ngIf="username.errors?.minlength" class="uk-text-danger uk-text-small">Minimum 5 character long</p>
                                 </div>
                             </div>
 
                             <div class="uk-margin-small">
-                                <div class="uk-grid uk-grid-small">
-                                    <div class="uk-width-1-2@s">
-                                        <label class="uk-form-label" for="">First Name</label>
-                                        <input type="text" class="uk-input uk-border-rounded" placeholder="First Name" required
-                                        [(ngModel)]="data.name" name="name" #name="ngModel">
-                                    </div>
-                                    <div class="uk-width-1-2@s">
-                                        <label class="uk-form-label" for="">Last Name</label>
-                                        <input type="text" class="uk-input uk-border-rounded" placeholder="Last Name" required
-                                        [(ngModel)]="data.lname" name="lname" #lname="ngModel">
-                                    </div>
+                                <label class="uk-from-label">Email</label>
+                                <div class="uk-inline uk-width-1-1@s">
+                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon:mail"></span>
+                                    <input type="email" [(ngModel)]="data.email" name="email" required #email="ngModel"
+                                    placeholder="Enter Email" class="uk-border-rounded uk-input" email>  
+                                </div>
+                                <div *ngIf="email.invalid && (email.touched || email.dirty)">
+                                    <p *ngIf="email.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                    <p *ngIf="email.errors?.email" class="uk-text-danger uk-text-small">Invalid Email</p>
                                 </div>
                             </div>
 
@@ -52,6 +66,9 @@
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>
+                                <div *ngIf="gender.invalid && (gender.touched || gender.dirty)">
+                                    <p *ngIf="gender.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                </div>
                             </div>
 
                             <div class="uk-margin-small">
@@ -60,6 +77,9 @@
                                     <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon:receiver"></span>
                                     <input type="tel" class="uk-input uk-border-rounded" placeholder="Mobile Number" required
                                     [(ngModel)]="data.phone" name="phone" #phone="ngModel" number>
+                                </div>
+                                <div *ngIf="phone.invalid && (phone.touched || phone.dirty)">
+                                    <p *ngIf="phone.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
                                 </div>
                             </div>
 
@@ -72,7 +92,11 @@
                                     <a *ngIf="!iconFlip1" (click)="changePasswordType()" class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon:unlock">
                                     </a>
                                     <input id="password" type="password" [(ngModel)]="data.password" name="password" required
-                                    placeholder="Password" class="uk-input uk-border-rounded" #password="ngModel">
+                                    placeholder="Password" class="uk-input uk-border-rounded" #password="ngModel" minlength="8">
+                                </div>
+                                <div *ngIf="password.invalid && (password.touched || password.dirty)">
+                                    <p *ngIf="password.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                    <p *ngIf="password.errors?.minlength" class="uk-text-danger uk-text-small">Minimum 8 character Long</p>
                                 </div>
                             </div>
 
@@ -87,9 +111,14 @@
                                     <input id="cpassword" type="password" [(ngModel)]="data.cpassword" name="cpassword" required
                                     placeholder="Confirm Password" class="uk-input uk-border-rounded" #cpassword="ngModel">
                                 </div>
+                                <div *ngIf="cpassword.invalid && (cpassword.touched || cpassword.dirty)">
+                                    <p *ngIf="cpassword.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                </div>
                             </div>
 
-                            <button type="button" class="uk-button uk-button-primary uk-border-rounded uk-width-1-1 uk-margin-small">Submit</button>
+                            <button type="button" class="uk-button uk-button-primary uk-border-rounded uk-width-1-1 uk-margin-small"
+                            [disabled]="username.errors || name.errors || lname.errors || email.errors || phone.errors || gender.errors 
+                            || password.errors || cpassword.errors ">Submit</button>
                         </form>
                     </div>
                 </div>
