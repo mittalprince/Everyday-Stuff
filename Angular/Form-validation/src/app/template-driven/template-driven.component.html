@@ -16,7 +16,7 @@
                                     <div class="uk-width-1-2@s">
                                         <label class="uk-form-label" for="">First Name</label>
                                         <input type="text" class="uk-input uk-border-rounded" placeholder="First Name" required
-                                        [(ngModel)]="data.name" name="name" #name="ngModel">
+                                        [(ngModel)]="data.name" name="name" #name="ngModel" >
                                         <div *ngIf="name.invalid && (name.touched || name.dirty)">
                                             <p *ngIf="name.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
                                         </div>
@@ -26,7 +26,7 @@
                                         <input type="text" class="uk-input uk-border-rounded" placeholder="Last Name" required
                                         [(ngModel)]="data.lname" name="lname" #lname="ngModel">
                                         <div *ngIf="lname.invalid && (lname.touched || lname.dirty)">
-                                            <p *ngIf="lname.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                            <p *ngIf="lname.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
                                         </div>
                                     </div>
                                 </div>
@@ -37,11 +37,12 @@
                                 <div class="uk-inline uk-width-1-1@s">
                                     <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: user"></span>
                                     <input type="text" [(ngModel)]="data.username" name="username" #username="ngModel"
-                                    placeholder="Username" class="uk-input uk-border-rounded" required minlength="5">
+                                    placeholder="Username" class="uk-input uk-border-rounded" required minlength="5" appForbiddenName="admin" >
                                 </div>
                                 <div *ngIf="username.invalid && (username.touched || username.dirty)">
-                                    <p *ngIf="username.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
-                                    <p *ngIf="username.errors?.minlength" class="uk-text-danger uk-text-small">Minimum 5 character long</p>
+                                    <p *ngIf="username.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
+                                    <p *ngIf="username.errors?.minlength" class="uk-text-danger uk-text-small uk-margin-remove">Minimum 5 character long</p>
+                                    <p *ngIf="username.errors?.forbiddenName" class="uk-text-danger uk-text-samll uk-margin-remove">Username admin not allowed</p>
                                 </div>
                             </div>
 
@@ -53,21 +54,21 @@
                                     placeholder="Enter Email" class="uk-border-rounded uk-input" email>  
                                 </div>
                                 <div *ngIf="email.invalid && (email.touched || email.dirty)">
-                                    <p *ngIf="email.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
-                                    <p *ngIf="email.errors?.email" class="uk-text-danger uk-text-small">Invalid Email</p>
+                                    <p *ngIf="email.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
+                                    <p *ngIf="email.errors?.email" class="uk-text-danger uk-text-small uk-margin-remove">Invalid Email</p>
                                 </div>
                             </div>
 
                             <div class="uk-margin-small">
                                 <label for="" class="uk-form-label">Gender</label>
                                 <select class="uk-select uk-border-rounded" [(ngModel)]="data.gender" required
-                                name="gender" #gender="ngModel">
+                                name="gender" #gender="ngModel" [ngClass]="{'uk-form-danger': gender.invalid && (gender.touched || gender.dirty)}">
                                     <option value="">Select Your gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>
                                 <div *ngIf="gender.invalid && (gender.touched || gender.dirty)">
-                                    <p *ngIf="gender.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                    <p *ngIf="gender.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
                                 </div>
                             </div>
 
@@ -79,7 +80,7 @@
                                     [(ngModel)]="data.phone" name="phone" #phone="ngModel" number>
                                 </div>
                                 <div *ngIf="phone.invalid && (phone.touched || phone.dirty)">
-                                    <p *ngIf="phone.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                    <p *ngIf="phone.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
                                 </div>
                             </div>
 
@@ -95,8 +96,8 @@
                                     placeholder="Password" class="uk-input uk-border-rounded" #password="ngModel" minlength="8">
                                 </div>
                                 <div *ngIf="password.invalid && (password.touched || password.dirty)">
-                                    <p *ngIf="password.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
-                                    <p *ngIf="password.errors?.minlength" class="uk-text-danger uk-text-small">Minimum 8 character Long</p>
+                                    <p *ngIf="password.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
+                                    <p *ngIf="password.errors?.minlength" class="uk-text-danger uk-text-small uk-margin-remove">Minimum 8 character Long</p>
                                 </div>
                             </div>
 
@@ -109,11 +110,12 @@
                                     <a *ngIf="!iconFlip2" (click)="changeCPasswordType()" class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon:unlock">
                                     </a>
                                     <input id="cpassword" type="password" [(ngModel)]="data.cpassword" name="cpassword" required
-                                    placeholder="Confirm Password" class="uk-input uk-border-rounded" #cpassword="ngModel">
+                                    placeholder="Confirm Password" class="uk-input uk-border-rounded" #cpassword="ngModel" appEqualToValidator="password">
                                 </div>
                                 <div *ngIf="cpassword.invalid && (cpassword.touched || cpassword.dirty)">
-                                    <p *ngIf="cpassword.errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                    <p *ngIf="cpassword.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
                                 </div>
+                                <p *ngIf="cpassword.errors?.equalTo" class="uk-text-danger uk-text-small uk-margin-remove">Password Must be same</p>
                             </div>
 
                             <button type="button" class="uk-button uk-button-primary uk-border-rounded uk-width-1-1 uk-margin-small"
