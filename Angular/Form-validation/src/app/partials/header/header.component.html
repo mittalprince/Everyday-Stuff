@@ -1,4 +1,4 @@
-<div class="uk-navbar-container uk-container-expand boundary uk-box-shadow-medium" data-uk-sticky>
+<div class="uk-navbar-container uk-container-expand boundary uk-box-shadow-medium uk-visible@m" data-uk-sticky>
     <div>
         <div class="uk-container uk-container-expand uk-navbar" data-uk-navbar="mode:click">
             <div class="uk-navbar-left">
@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav uk-visible@m">
+                <ul class="uk-navbar-nav">
                     <li routerLinkActive="uk-active">
                         <a routerLink="/template-driven" class="uk-text-capitalize">TEMPLATE-DRIVEN</a></li>
                     <li routerLinkActive="uk-active">
@@ -16,12 +16,51 @@
                         <a href="https://github.com/mittalprince/Everyday-Stuff/tree/master/Angular/Form-validation" class="uk-text-capitalize">DOCUMENTATION</a></li>
                 </ul>
                 <div class="uk-navbar-item uk-visible@m">
-                    <a href="https://github.com/mittalprince/Everyday-Stuff/tree/master/Angular/Form-validation"class="uk-button uk-button-default uk-border-rounded">DOWNLOAD <span uk-icon="download"></span></a>
+                    <a href="https://github.com/mittalprince/Everyday-Stuff/tree/master/Angular/Form-validation" class="uk-button uk-button-default uk-border-rounded">DOWNLOAD <span uk-icon="download"></span></a>
                 </div>
-                <a class="uk-navbar-toggle-icon uk-hidden@m uk-link-reset">
-                    <span data-uk-icon="menu"></span>
-                </a>
             </div>
         </div>
     </div>
 </div>
+
+<div class="uk-hidden@m">
+    <nav class="uk-navbar-container uk-box-shadow-small">
+        <div class="uk-container">
+            <div class="uk-navbar" uk-navbar="mode:click;">
+                <div class="uk-navbar-left">
+                        <a routerLink="/" class="uk-navbar-item uk-logo">
+                            <span data-uk-icon="icon: uikit; ratio: 2" class="uk-margin-small-right"></span> UIkit
+                        </a>
+                </div>
+                <div class="uk-navbar-right">
+                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #side-nav"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div id="side-nav" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <br>
+        <ul class="uk-nav uk-nav-default">
+            <li routerLinkActive="uk-active">
+                <a routerLink="/template-driven" class="uk-text-capitalize">TEMPLATE-DRIVEN</a></li>
+            <li routerLinkActive="uk-active">
+                <a routerLink="/reactive" class="uk-text-capitalize">REACTIVE</a></li>
+            <li routerLinkActive="uk-active">
+                <a href="https://github.com/mittalprince/Everyday-Stuff/tree/master/Angular/Form-validation" class="uk-text-capitalize">DOCUMENTATION</a>
+            </li>
+                    
+            <li class="uk-nav-divider"></li>
+
+            <li>
+                <a href="https://github.com/mittalprince/Everyday-Stuff/tree/master/Angular/Form-validation">
+                    <span class="uk-margin-right" data-uk-icon="icon: download"></span>Download</a>
+            </li>
+            <li class="uk-nav-divider"></li>
+        </ul>
+    </div>
+</div>
+    
