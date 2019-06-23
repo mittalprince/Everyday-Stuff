@@ -4,12 +4,97 @@
             <span>Forms in Angular</span>
         </h1>
         <div class="uk-grid uk-grid-small uk-margin-small" data-uk-grid>
-            <div class="uk-width-1-2">
-                <h4 class="uk-text-center">Template-Driven</h4>
+            <div class="uk-width-1-1">
+                <h3>Reactive Form</h3>
+                <p>Reactive forms are also known as model-driven forms. 
+                    This means that the HTML content changes depending on the code in the component.</p>
+                <ul class="uk-list uk-list-bullet">
+                    <li>While reactive forms can be a tad more complex to work with in the beginning, 
+                        they allow for much more flexibility and they also help keep your logic in the component class and 
+                        your templates simple.
+                    </li>
+                    <li>
+                        Use the reactive forms approach in case the form shall support dynamic data structures and logic. 
+                        Examples are dynamic survey forms, forms to add/delete 0..n tags or phone numbers, forms providing 
+                        different validation for different user roles, etc.
+                    </li>
+                </ul>
             </div>
-            <div class="uk-width-1-2">
-                <h4 class="uk-text-center">Reactive Form</h4>
+
+            <div class="uk-width-1-1">
+                <h3>Template-Driven Form</h3>
+                <p>
+                    Template-driven forms are driven by derivatives in the template. 
+                    This means that you will see derivatives such as ngModel in the template as opposed to the code.
+                </p>
+                <ul class="uk-list uk-list-bullet">
+                    <li>
+                        Use template-driven forms when developing static forms. Static means the structure and logic of a 
+                        form is fix. E.g. the number of form fields does not vary, form validation rules are the same for 
+                        different user roles, etc. In the template-driven approach the form structure and logic is mainly 
+                        implemented in HTML. Based on this a representation of the form in TypeScript is generated automatically.
+                    </li>
+                    <li>Examples are login forms, reset password forms etc.</li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
+
+<div class="uk-section uk-padding-remove-top">
+    <div class="uk-container uk-text-center">
+        <h3 class="uk-text-center">Differnce in Reactive and Template-Driven Form</h3>
+        <table class="uk-table uk-table-divider">
+            <thead class="uk-text-center">
+                <tr>
+                    <th class="uk-text-center">Points</th>
+                    <th class="uk-text-center">Reactive Form</th>
+                    <th class="uk-text-center">Template Driven Form</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Setup (form model)</td>
+                    <td>More explicit, created in component class</td>
+                    <td>Less explicit, created by directives</td>
+                </tr>
+                <tr>
+                    <td>Data model</td>
+                    <td>Structured</td>
+                    <td>Unstructured</td>
+                </tr>
+                <tr>
+                    <td>Predictability</td>
+                    <td>Synchronous</td>
+                    <td>Asynchronous</td>
+                </tr>
+                <tr>
+                        <td>Form validation</td>
+                        <td>Functions</td>
+                        <td>Directives</td>
+                    </tr>
+                    <tr>
+                        <td>Mutability</td>
+                        <td>Immutable</td>
+                        <td>Mutable</td>
+                    </tr>
+                    <tr>
+                        <td>Scalability</td>
+                        <td>Low-level API access</td>
+                        <td>Abstraction on top of APIs</td>
+                    </tr>
+                    <tr>
+                        <td>Module</td>
+                        <td>ReactiveFormsModule</td>
+                        <td>FormsModule</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+        
 </div>

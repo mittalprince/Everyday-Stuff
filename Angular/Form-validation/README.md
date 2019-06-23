@@ -44,7 +44,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 * Use template-driven forms when developing static forms. Static means the structure and logic of a form is fix. E.g. the number of form fields does not vary, form validation rules are the same for different user roles, etc. In the template-driven approach the form structure and logic is mainly implemented in HTML. Based on this a representation of the form in TypeScript is generated automatically.
 
-* Examples are login forms, reset password forms, forms to enter an
+* Examples are login forms, reset password forms etc.
 
 ## Difference in Reactive and Template-Driven Form
 
