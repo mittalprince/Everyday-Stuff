@@ -8,7 +8,7 @@
 
         <div class="uk-grid uk-grid-small" data-uk-grid>
             <div class="uk-width-1-2@m uk-width-1-1@s">
-                <div class="uk-card uk-card-default ujk-border-rounded" data-uk-scrollspy="cls: uk-animation-slide-right-small">
+                <div class="uk-card uk-card-default uk-border-rounded" data-uk-scrollspy="cls: uk-animation-slide-right-small">
                     <div class="uk-card-body">
                         <form>
                             <div class="uk-margin-small">
@@ -42,12 +42,12 @@
                                 <div *ngIf="username.invalid && (username.touched || username.dirty)">
                                     <p *ngIf="username.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
                                     <p *ngIf="username.errors?.minlength" class="uk-text-danger uk-text-small uk-margin-remove">Minimum 5 character long</p>
-                                    <p *ngIf="username.errors?.forbiddenName" class="uk-text-danger uk-text-samll uk-margin-remove">Username admin not allowed</p>
+                                    <p *ngIf="username.errors?.forbiddenName" class="uk-text-danger uk-text-samll uk-margin-remove">Username {{data.username}} not allowed</p>
                                 </div>
                             </div>
 
                             <div class="uk-margin-small">
-                                <label class="uk-from-label">Email</label>
+                                <label class="uk-form-label" for="">Email</label>
                                 <div class="uk-inline uk-width-1-1@s">
                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon:mail"></span>
                                     <input type="email" [(ngModel)]="data.email" name="email" required #email="ngModel"
@@ -93,11 +93,12 @@
                                     <a *ngIf="!iconFlip1" (click)="changePasswordType()" class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon:unlock">
                                     </a>
                                     <input id="password" type="password" [(ngModel)]="data.password" name="password" required
-                                    placeholder="Password" class="uk-input uk-border-rounded" #password="ngModel" minlength="8">
+                                    placeholder="Password" class="uk-input uk-border-rounded" #password="ngModel" minlength="8" appForbiddenName="password">
                                 </div>
                                 <div *ngIf="password.invalid && (password.touched || password.dirty)">
                                     <p *ngIf="password.errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
                                     <p *ngIf="password.errors?.minlength" class="uk-text-danger uk-text-small uk-margin-remove">Minimum 8 character Long</p>
+                                    <p *ngIf="password.errors?.forbiddenName" class="uk-text-danger uk-text-small uk-margin-remove">Password {{data.password}} not allowed</p>
                                 </div>
                             </div>
 

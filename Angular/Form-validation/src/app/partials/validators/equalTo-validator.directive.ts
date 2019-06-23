@@ -1,4 +1,4 @@
-import { Validator, AbstractControl, NG_VALIDATORS, ValidatorFn} from '@angular/forms'
+import { Validator, AbstractControl, NG_VALIDATORS, ValidatorFn, FormGroup} from '@angular/forms'
 import { Directive, Input } from '@angular/core'
 
 @Directive({
@@ -13,16 +13,30 @@ import { Directive, Input } from '@angular/core'
 export class EqualToValidatorDirective implements Validator{
 
     @Input() appEqualToValidator: string;
-    validate(control: AbstractControl): { [key: string]: any} | any {
-        return (control.value) ? EqualToValidator(control.parent.controls[this.appEqualToValidator].value)(control) : null
+    validate(control: AbstractControl): { [key: string]: any} | null {
+        return (control.value) ? EqualToValidator(this.appEqualToValidator)(control) : null
     }
 }
 
-export function EqualToValidator( password: any): ValidatorFn {
+export function EqualToValidator( matchControlName: any): ValidatorFn {
     return (control : AbstractControl): { [key: string]: any } | null => {
-        if(password !== control.value){
+        const compareTo = control.parent.controls[matchControlName].value
+        if(compareTo !== control.value){
             return {'equalTo': true}
         }
         return null
+    }
+}
+
+export function MustMatch(matchControlName: string){
+    return (control: AbstractControl): { [key: string]: any} | null => {
+       if(control.value){
+           const compareTo = control.parent.controls[matchControlName].value
+           if(compareTo !== control.value){
+                return {'equalTo': true}
+           }
+           return null
+       }
+       return null
     }
 }

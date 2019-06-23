@@ -1,1 +1,109 @@
-Reactive
+<div class="bg"></div>
+
+<div class="uk-section" data-uk-height-viewport>
+    <div class="uk-container uk-container-small">
+        <div class="uk-text-center uk-margin-small">
+            <h3 class="white-txt">Reactive Forms Validation</h3>
+        </div>
+
+        <div class="uk-grid uk-grid-small" data-uk-grid>
+            <div class="uk-width-1-2@m uk-width-1-1@s">
+                <div class="uk-card uk-card-default uk-border-rounded" data-uk-scrollpy="cls: uk-animation-slide-right-small">
+                    <div class="uk-card-body">
+                        <form [formGroup]="registrationForm">
+
+                            <div class="uk-margin-small">
+                                <div class="uk-grid uk-grid-small" data-uk-grid>
+                                    <div class="uk-width-1-2@m">
+                                        <label class="uk-form-label" for="">First Name</label>
+                                        <input type="text" formControlName="firstName" class="uk-border-rounded uk-input" placeholder="First Name">
+                                        <div *ngIf="registrationForm.controls['firstName'].invalid && (registrationForm.controls['firstName'].touched || registrationForm.controls['firstName'].dirty)">
+                                            <p *ngIf="registrationForm.controls['firstName'].errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-2@m">
+                                        <label for="" class="uk-form-label">Last Name</label>
+                                        <input type="text" class="uk-input uk-border-rounded" formControlName="lastName" placeholder="Last Name">
+                                        <div *ngIf="registrationForm.controls['lastName'].invalid && (registrationForm.controls['lastName'].touched || registrationForm.controls['firstName'].dirty)">
+                                            <p *ngIf="registrationForm.controls['lastName'].errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="uk-margin-small">
+                                <label for="" class="uk-form-label">Username</label>
+                                <div class="uk-inline uk-width-1-1@s">
+                                    <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: user"></span>
+                                    <input id="username" type="text" formControlName="username" placeholder="Username" class="uk-input uk-border-rounded">
+                                </div>
+                                <div *ngIf="registrationForm.controls['username'].invalid && (registrationForm.controls['username'].touched || registrationForm.controls['firstName'].dirty)">
+                                    <p *ngIf="registrationForm.controls['username'].errors?.required" class="uk-text-danger uk-text-small">Required Field</p>
+                                    <p *ngIf="registrationForm.controls['username'].errors?.minlength" class="uk-text-danger uk-text-small">Minimum 5 character long</p>
+                                    <p *ngIf="registrationForm.controls['username'].errors?.forbiddenName" class="uk-text-danger uk-text-small">Username admin not allowed</p>
+                                </div>
+                            </div>
+
+                            <div class="uk-margin-small">
+                                <label for="" class="uk-form-label">Email</label>
+                                <div class="uk-inline uk-width-1-1@s">
+                                    <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: mail"></span>
+                                    <input type="email" formControlName="email" placeholder="Enter Email" class="uk-input uk-border-rounded">
+                                </div>
+                                <div *ngIf="registrationForm.controls['email'].invalid && (registrationForm.controls['email'].touched || registrationForm.controls['email'].dirty)">
+                                    <p *ngIf="registrationForm.controls['email'].errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
+                                    <p *ngIf="registrationForm.controls['email'].errors?.email" class="uk-text-danger uk-text-small uk-margin-remove">Invalid Email</p>
+                                </div>
+                            </div>
+
+                            <div class="uk-margin-small">
+                                <label for="" class="uk-form-label">Phone</label>
+                                <div class="uk-inline uk-width-1-1">
+                                    <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: receiver"></span>
+                                    <input type="tel" formControlName="phone" placeholder="Mobile Number" class="uk-input uk-border-rounded">
+                                </div>
+                                <div *ngIf="registrationForm.controls['phone'].invalid && (registrationForm.controls['phone'].touched || registrationForm.controls['phone'].dirty)">
+                                    <p *ngIf="registrationForm.controls['phone'].errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
+                                </div>
+                            </div>
+                            
+                            <div class="uk-margin-small">
+                                <label for="" class="uk-form-label">Password</label>
+                                <div class="uk-inline uk-width-1-1">
+                                    <a *ngIf="iconFlip1" (click)="changePasswordType()" class="uk-form-icon uk-form-icon-flip"
+                                    data-uk-icon="icon: lock" >
+                                    </a>
+                                    <a *ngIf="!iconFlip1" (click)="changePasswordType()" class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon:unlock">
+                                    </a>
+                                    <input id="password" type="password" formControlName="password" class="uk-input uk-border-rounded" placeholder="Password">
+                                </div>
+                                <div *ngIf="registrationForm.controls['password'].invalid && (registrationForm.controls['password'].touched || registrationForm.controls['password'].dirty)">
+                                    <p *ngIf="registrationForm.controls['password'].errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
+                                    <p *ngIf="registrationForm.controls['password'].errors?.minlength" class="uk-text-danger uk-text-small uk-margin-remove">Must be 8 character long</p>
+                                    <p *ngIf="registrationForm.controls['password'].errors?.forbiddenName" class="uk-text-danger uk-text-small uk-margin-remove">Password password not allowed</p>
+                                </div>
+                            </div>
+                            
+                            <div class="uk-margin-small">
+                                <label class="uk-form-label" for="">Confirm Password</label>
+                                <div class="uk-inline uk-width-1-1">
+                                    <a *ngIf="iconFlip2" (click)="changeCPasswordType()" class="uk-form-icon uk-form-icon-flip"
+                                    data-uk-icon="icon: lock" >
+                                    </a>
+                                    <a *ngIf="!iconFlip2" (click)="changeCPasswordType()" class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon:unlock">
+                                    </a>
+                                    <input id="cpassword" type="password" formControlName="cpassword" class="uk-input uk-border-rounded" placeholder="Confirm Password">
+                                </div>
+                                <div *ngIf="registrationForm.controls['cpassword'].invalid && (registrationForm.controls['cpassword'].touched || registrationForm.controls['cpassword'].dirty)">
+                                    <p *ngIf="registrationForm.controls['cpassword'].errors?.required" class="uk-text-danger uk-text-small uk-margin-remove">Required Field</p>
+                                    <p *ngIf="registrationForm.controls['cpassword'].errors?.equalTo" class="uk-text-danger uk-text-small uk-margin-remove">Password Must be same</p>
+                                </div>
+                            </div>
+                            <button type="button" class="uk-button uk-button-primary uk-border-rounded uk-width-1-1 uk-margin-small" [disabled]="registrationForm.invalid">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

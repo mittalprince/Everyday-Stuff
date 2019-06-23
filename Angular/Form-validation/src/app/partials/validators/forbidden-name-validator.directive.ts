@@ -13,14 +13,20 @@ import { Input, Directive } from '@angular/core'
 export class ForbiddenValidatorDirective implements Validator{
     @Input('appForbiddenName') forbiddenName:  string;
     validate(control: AbstractControl): { [key: string]: any} | null {
-        return this.forbiddenName ? forbiddenNameValidator(new RegExp(this.forbiddenName, 'i'))(control) : null
+        return this.forbiddenName ? forbiddenNameValidator(this.forbiddenName)(control) : null
 
     }
 }
 
-export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn{
+export function forbiddenNameValidator(nameRe: string): ValidatorFn{
     return (control: AbstractControl): { [key: string]: any } | null => {
-        const forbidden = nameRe.test(control.value);
-        return forbidden ? {'forbiddenName': true} : null
+        const value = control.value
+        if(!value){
+            return null
+        }
+        else if (nameRe === (control.value).toLowerCase()){
+            return {'forbiddenName': true}
+        }
+        return null;
     }
 }

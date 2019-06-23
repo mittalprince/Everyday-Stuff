@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { routingComponent } from './app-routing.module'
-
+import { ReactiveFormsModule } from '@angular/forms'
 // Validators -------------------------------
 
 import { EqualToValidatorDirective } from './partials/validators/equalTo-validator.directive'
@@ -24,7 +24,8 @@ import { headerComponent } from './../app/partials/header/header.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
