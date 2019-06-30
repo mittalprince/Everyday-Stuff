@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Ubuntu Light';
+    src: url('./assets/Ubuntu/Ubuntu-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Regular';
+    src: url('./assets/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Bold';
+    src: url('./assets/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
+}
+
+
+/*Roboto Font Face*/
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('./assets/Roboto/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('./assets/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('./assets/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+
+/* Open Sans */
+
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url('./assets/Open_Sans/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('./assets/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans Semi Bold';
+    src: url('./assets/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Ubuntu Regular', sans-serif;
+}
+
+p {
+    font-family: 'Ubuntu Regular', sans-serif;
+}

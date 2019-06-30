@@ -1,0 +1,37 @@
+li>a {
+    font-family: 'Ubuntu Regular', sans-serif;
+}
+
+.uk-breadcrumb>*>* {
+    font-family: 'Ubuntu Bold';
+    display: inline-block;
+    font-size: .775rem;
+    color: #1228dcdb;
+}
+
+.uk-breadcrumb>:nth-child(n+2):not(.uk-first-column)::before {
+    content: "/";
+    display: inline-block;
+    margin: 0 8px;
+    color: #999 !important;
+}
+
+.uk-dropdown{
+    position: absolute;
+    z-index: 1020;
+    box-sizing: border-box;
+    min-width: 200px;
+    padding: 15px;
+    background: #fff;
+    color: #666;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .15);
+
+}
+
+/* .uk-tab>*>a {
+    font-family: 'Ubuntu Regular', sans-serif;
+    font-weight: 400;
+    font-size:.875rem;
+    border-bottom: 3px solid transparent;
+    text-transform: none
+} */
