@@ -29,6 +29,189 @@
                         </div>
                     </li>
                 </ul>
+
+                <div class="uk-panel uk-panel-scrollable" data-uk-height-viewport="offset-bottom: 20">
+
+                    <div class="uk-card uk-card-default uk-border-rounded uk-margin-small active" *ngFor="let i of [].constructor(15); let I = index" >
+                        <div class="uk-padding-small">
+                            <div class="uk-grid uk-grid-small" data-uk-grid>
+                                <div class="uk-width-auto">
+                                    <img src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" width="50" class="uk-border-circle" alt="">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h5 class="uk-margin-remove">Prince Mittal</h5>
+                                    <h6 class="uk-margin-remove uk-text-meta">Contacted on - 11 July, 2019</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="uk-card uk-card-default uk-border-rounded no-ticket">
+                        <div class="uk-card-body">
+                            <div class="uk-text-center">
+                                <h6 class="uk-margin-remove">You have no issues</h6>
+                                <a href="" class="bold-ub uk-text-small">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="uk-width-expand">
+                <div class="uk-card uk-card-default uk-border-rounded uk-height-large" data-uk-height-viewport="offset-bottom: 20">
+                    <div class="js-wrapper">
+                        <div class="uk-card-header">
+                            <div class="uk-grid uk-grid-small" data-uk-grid>
+                                <div class="uk-width-auto">
+                                    <img width="50" class="uk-border-circle" src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" alt="">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h5 class="uk-margin-remove">Rakesh Kumar Mittal</h5>
+                                    <h6 class="uk-margin-remove uk-text-meta">Issue raised - 26 July, 2019</h6>
+                                    <a class="uk-margin-small-right bold-ub small" >Detailed Problem</a>
+                                    <a class="uk-margin-small-right bold-ub small" >Assign Issue</a>
+                                    <a class="uk-margin-small-right bold-ub small">Take Action</a>
+                                </div>
+                                <div class="uk-width-1-3">
+                                    <div class="uk-grid uk-grid-small uk-grid-divider" data-uk-grid>
+                                        <div class="uk-widfth-1-2">
+                                            <p class="uk-margin-remove uk-text-small bold-ub small-txt">Current Status</p>
+                                            <span class="status opened">Opened</span>
+                                        </div>
+                                        <div class="uk-width-1-2">
+                                            <p class="uk-margin-remove uk-text-small small-txt bold-ub">Time Lapsed</p>
+                                            <span class="status opened">5 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div uk-overflow-auto="selContainer: .uk-height-large; selContent: .js-wrapper" data-uk-scrollspy="cls: uk-animation-slide-top-small">
+                            <div class="uk-card-body uk-padding-small-top">
+                                <article class="uk-comment uk-comment-primary">
+                                    <header class="uk-comment-header uk-grid-small uk-flex-middle" data-uk-grid>
+                                        <div class="uk-width-auto">
+                                            <img width="30" src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" alt="" class="uk-border-circle">
+                                        </div>
+                                        <div class="uk-width-expand">
+                                            <h6 class="uk-margin-remove">Rajat Arora</h6>
+                                            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                                <li><a href="#">12 Days Ago</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-auto">
+                                            <span class="opened status">Interested</span>
+                                        </div>
+                                    </header>
+        
+                                    <div class="uk-comment-body">
+                                        <p class="small-txt">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </article>
+        
+                                <article class="uk-comment uk-comment-primary">
+                                    <header class="uk-comment-header uk-grid-small uk-flex-middle" data-uk-grid>
+                                        <div class="uk-width-auto">
+                                            <img width="30" class="uk-border-circle" src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" alt="">
+                                        </div>
+                                        <div class="uk-width-expand">
+                                            <h6 class="uk-margin-remove">Rajat Arora</h6>
+                                            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                                <li><a href="#">12 Days Ago</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-auto">
+                                            <span class="status opened">Converted</span>
+                                        </div>
+                                    </header>
+                                    <div class="uk-comment-body">
+                                        <p class="small-txt">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        </p>
+                                    </div>
+                                </article>
+                                <div class="uk-tile uk-tile-primary uk-text-center uk-margin-small-top">
+                                    <h6 class="small-txt uk-margin-remove bold-ub">Updated the name by the Rakesh 10 days Ago</h6>
+                                </div>
+                                <article class="uk-comment uk-comment-primary">
+                                    <header class="uk-comment-header uk-grid-small uk-flex-middle" data-uk-grid>
+                                        <div class="uk-width-auto">
+                                            <img width="30" class="uk-border-circle" src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" alt="">
+                                        </div>
+                                        <div class="uk-width-expand">
+                                            <h6 class="uk-margin-remove">Rajat Arora</h6>
+                                            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                                <li><a href="#">12 Days Ago</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-auto">
+                                            <span class="status opened">Converted</span>
+                                        </div>
+                                    </header>
+                                    <div class="uk-comment-body">
+                                        <p class="small-txt">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        </p>
+                                    </div>
+                                </article>
+                                <div class="uk-tile uk-tile-primary uk-text-center uk-margin-small-top">
+                                    <h6 class="small-txt uk-margin-remove bold-ub">Updated the name by the Rakesh 10 days Ago</h6>
+                                </div>
+                                <div class="uk-tile uk-tile-primary uk-text-center uk-margin-small-top">
+                                    <h6 class="small-txt uk-margin-remove bold-ub">Updated the name by the Rakesh 10 days Ago</h6>
+                                </div>
+                                <article class="uk-comment uk-comment-primary">
+                                    <header class="uk-comment-header uk-grid-small uk-flex-middle" data-uk-grid>
+                                        <div class="uk-width-auto">
+                                            <img width="30" class="uk-border-circle" src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" alt="">
+                                        </div>
+                                        <div class="uk-width-expand">
+                                            <h6 class="uk-margin-remove">Rajat Arora</h6>
+                                            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                                <li><a href="#">12 Days Ago</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-auto">
+                                            <span class="status opened">Converted</span>
+                                        </div>
+                                    </header>
+                                    <div class="uk-comment-body">
+                                        <p class="small-txt">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article class="uk-comment uk-comment-primary">
+                                    <header class="uk-comment-header uk-grid-small uk-flex-middle" data-uk-grid>
+                                        <div class="uk-width-auto">
+                                            <img width="30" class="uk-border-circle" src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" alt="">
+                                        </div>
+                                        <div class="uk-width-expand">
+                                            <h6 class="uk-margin-remove">Rajat Arora</h6>
+                                            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                                <li><a href="#">12 Days Ago</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-auto">
+                                            <span class="status opened">Converted</span>
+                                        </div>
+                                    </header>
+                                    <div class="uk-comment-body">
+                                        <p class="small-txt">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

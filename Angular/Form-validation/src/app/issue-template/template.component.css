@@ -28,10 +28,114 @@ li>a {
 
 }
 
-/* .uk-tab>*>a {
+.uk-tab>*>a {
     font-family: 'Ubuntu Regular', sans-serif;
     font-weight: 400;
     font-size:.875rem;
     border-bottom: 3px solid transparent;
     text-transform: none
-} */
+}
+
+.uk-tab>.uk-active>a {
+    color: #333;
+    border-color: #1e87f0;
+}
+
+.uk-panel-scrollable{
+    resize: none;
+    border: none;
+    height: 400px;
+    padding: 5px;
+}
+
+.active{
+    border: 1px solid #1e87f0;
+}
+
+.no-ticket {
+    border: 1px solid #8ef01e;
+}
+
+.bold-ub{
+    font-family: 'Ubuntu Bold'
+}
+
+.small{
+    font-size: 12px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.small-txt{
+    font-size: 12px;
+    color: #666;
+}
+
+.opened{
+    background-color: #f1f8ff;
+    color: #0366d6;
+}
+
+.status{
+    font-family: 'Ubuntu Bold';
+    padding: .3em .9em;
+    margin-right: 4px;
+    font-size: 11px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    border-radius: 3px;
+}
+
+.uk-comment-primary{
+    border-radius: 4px;
+    margin: 4px;
+    background: #f8f8f8;
+    padding: 10px;
+    border: 1px solid#e5e5e5;
+}
+
+.uk-card-body{
+    padding: 15px 40px;
+}
+
+.uk-subnav>*>:first-child{
+    font-family: 'Ubuntu Bold';
+    display: block;
+    color: gb(97, 97, 97);
+    font-size: .675rem;
+    text-transform: uppercase;
+    transition: .1 ease-in-out;
+    transition-property: color, background-color;
+}
+
+.uk-tile-primary{
+    padding: 4px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: rgb(212, 212, 212);
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(204, 204, 204);
+}
