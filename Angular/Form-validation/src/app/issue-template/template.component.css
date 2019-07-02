@@ -159,3 +159,15 @@ a{
     background: #f1f8ff;
     color: blue;
 }
+
+#profileImage {
+    width: 40px;
+    background: #512DA8;
+    font-size: 25px;
+    color: #fff;
+    padding: 5px;
+    /* text-align: center; */
+    /* line-height: 150px; */
+    /* margin: 20px 0; */
+}
+  

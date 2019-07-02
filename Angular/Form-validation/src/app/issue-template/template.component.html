@@ -36,7 +36,8 @@
                         <div class="uk-padding-small">
                             <div class="uk-grid uk-grid-small" data-uk-grid>
                                 <div class="uk-width-auto">
-                                    <img src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" width="50" class="uk-border-circle" alt="">
+                                    <div id="profileImage" [innerHTML]="setImage()" class="uk-text-center uk-flex-center uk-border-circle" [ngStyle]="setBackground()"></div>
+                                    <!-- <img src="https://wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/5.jpg" width="50" class="uk-border-circle" alt=""> -->
                                 </div>
                                 <div class="uk-width-expand">
                                     <h5 class="uk-margin-remove">Prince Mittal</h5>

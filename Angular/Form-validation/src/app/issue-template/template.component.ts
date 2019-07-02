@@ -11,9 +11,14 @@ export class TemplateComponent implements OnInit{
     toggleDetails: boolean = false
     assign: Boolean = false
 
+    background: any = [
+        '#39f', '#1e87f0', '#1e87f0', '#f0506e', '#5af050', '#32d296', '#d23250', '#d2a8329c', '#512DA8'
+    ]
     constructor(){}
 
-    ngOnInit(){}
+    ngOnInit(){
+        this.setImage()
+    }
 
     toggle(){
         if (this.toggleDetails == false) {
@@ -49,5 +54,24 @@ export class TemplateComponent implements OnInit{
         else{
             return 0
         }
+    }
+
+    setImage(){
+        // if(document.getElementById('profile')){
+        //     document.getElementById('profile').innerHTML = 'PM'
+        // }
+        // document.getElementById('profile').innerHTML = 'PM'
+
+        return 'PM'
+    }
+
+    setBackground(){
+        let randomSVG = this.background[Math.floor(Math.random() * this.background.length)];
+        console.log(randomSVG)
+        let style = {
+            'background': `${randomSVG}`
+        }
+
+        return style
     }
 }
