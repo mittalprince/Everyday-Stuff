@@ -166,24 +166,43 @@ a{
     font-size: 25px;
     color: #fff;
     padding: 5px;
-    /* text-align: center; */
-    /* line-height: 150px; */
-    /* margin: 20px 0; */
+}
+
+#profile{
+    width: 30px;
+    background: #f6f7f8;
+    font-size: 20px;
+    color: #f6f7f8; 
+    padding: 5px;
+}
+
+.shimmer-txt {
+    color: #f6f7f8;
+    color: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: placeholderShimmer;
+    -webkit-animation-timing-function: linear;
+    display: inline-block;
+    position: relative;
 }
 
 .box{
-    height: 104px;
-    width: 682px;
-    margin: 4px;
-    padding: 10px;
     border-radius: 4px;
+    margin: 4px;
+    /* background: #f6f7f8; */
+    padding: 10px;
+    /* height: 108px;
+    width: 682px; */
+    border: 1px solid#e5e5e5;
 }
 
 .shine {
     background: #f6f7f8;
     background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
     background-repeat: no-repeat;
-    background-size: 800px 120px; 
+    /* background-size: 800px 104px;  */
     display: inline-block;
     position: relative; 
     
@@ -193,6 +212,7 @@ a{
     -webkit-animation-name: placeholderShimmer;
     -webkit-animation-timing-function: linear;
     }
+
     @-webkit-keyframes placeholderShimmer {
         0% {
           background-position: -468px 0;
@@ -203,5 +223,5 @@ a{
         }
       }
       
-        
+      
   

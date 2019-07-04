@@ -67,7 +67,7 @@ export class ShimmerTemplateComponent implements OnInit{
 
     setBackground(){
         let randomSVG = this.background[Math.floor(Math.random() * this.background.length)];
-        console.log(randomSVG)
+        // console.log(randomSVG)
         let style = {
             'background': `${randomSVG}`
         }
