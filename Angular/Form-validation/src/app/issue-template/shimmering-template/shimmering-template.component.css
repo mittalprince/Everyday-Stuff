@@ -170,6 +170,7 @@ a{
 
 #profile{
     width: 30px;
+    height: 30px;
     background: #f6f7f8;
     font-size: 20px;
     color: #f6f7f8; 
@@ -193,8 +194,8 @@ a{
     margin: 4px;
     /* background: #f6f7f8; */
     padding: 10px;
-    /* height: 108px;
-    width: 682px; */
+    height: 108px;
+    width: 682px;
     border: 1px solid#e5e5e5;
 }
 
