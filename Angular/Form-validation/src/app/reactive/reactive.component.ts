@@ -12,7 +12,7 @@ export class reactiveComponent implements OnInit{
 
     iconFlip1 = true;
     iconFlip2 = true;
-
+    genders: any = ['Male', 'Female', 'Others']
     constructor(private fb: FormBuilder){}
 
     ngOnInit(){}
@@ -28,6 +28,7 @@ export class reactiveComponent implements OnInit{
         username: ['', [Validators.required, Validators.minLength(5), forbiddenNameValidator('admin')]],
         email: ['', [Validators.required, Validators.email]],
         phone: ['', [Validators.required]],
+        gender: ['Male', Validators.required],
         password: ['', [Validators.required, Validators.minLength(8), forbiddenNameValidator('password')]],
         cpassword: ['', [Validators.required, MustMatch('password')]]
     })

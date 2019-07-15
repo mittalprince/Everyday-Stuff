@@ -68,6 +68,12 @@
                             </div>
                             
                             <div class="uk-margin-small">
+                                <label for="" class="uk-form-label">Gender</label>
+                                <select formControlName="gender" class="uk-select">
+                                    <option [value]="Gender" *ngFor="let Gender of genders">{{Gender}}</option>
+                                </select>
+                            </div>
+                            <div class="uk-margin-small">
                                 <label for="" class="uk-form-label">Password</label>
                                 <div class="uk-inline uk-width-1-1">
                                     <a *ngIf="iconFlip1" (click)="changePasswordType()" class="uk-form-icon uk-form-icon-flip"
