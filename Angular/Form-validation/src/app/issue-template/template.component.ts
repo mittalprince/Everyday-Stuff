@@ -10,10 +10,7 @@ export class TemplateComponent implements OnInit{
 
     toggleDetails: boolean = false
     assign: Boolean = false
-
-    background: any = [
-        '#39f', '#1e87f0', '#1e87f0', '#f0506e', '#5af050', '#32d296', '#d23250', '#d2a8329c', '#512DA8'
-    ]
+    
     constructor(){}
 
     ngOnInit(){
@@ -66,10 +63,10 @@ export class TemplateComponent implements OnInit{
     }
 
     setBackground(){
-        let randomSVG = this.background[Math.floor(Math.random() * this.background.length)];
-        console.log(randomSVG)
+        var color = Math.floor(0x1000000 * Math.random()).toString(16);
+        let randomBg =  '#' + ('000000' + color).slice(-6);
         let style = {
-            'background': `${randomSVG}`
+            'background': `${randomBg}`
         }
 
         return style

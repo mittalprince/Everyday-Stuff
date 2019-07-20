@@ -6,14 +6,16 @@ import { templateDrivenComponent } from './template-driven/template-driven.compo
 import { landingComponent } from './landing/landing.component'
 import { TemplateComponent } from './issue-template/template.component'
 import { ShimmerTemplateComponent } from './issue-template/shimmering-template/shimmering-template.component'
+import { TextEditorComponent } from './text-editor/text-editor.component' 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'shimmer-template', pathMatch: 'full'},
-  {path:'', component:landingComponent},
+  {path: '', redirectTo: '/home' , pathMatch: 'full'},
+  {path:'home', component:landingComponent},
   {path:'reactive', component: reactiveComponent},
   {path:'template-driven', component: templateDrivenComponent},
   {path: 'template', component: TemplateComponent},
-  {path: 'shimmer-template', component: ShimmerTemplateComponent}
+  {path: 'shimmer-template', component: ShimmerTemplateComponent},
+  {path: 'editor', component: TextEditorComponent}
 ];
 
 @NgModule({
@@ -27,5 +29,6 @@ export const routingComponent = [
   templateDrivenComponent,
   landingComponent,
   TemplateComponent,
-  ShimmerTemplateComponent
+  ShimmerTemplateComponent,
+  TextEditorComponent
 ]
