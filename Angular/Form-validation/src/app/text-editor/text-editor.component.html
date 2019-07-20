@@ -8,7 +8,7 @@
         </div>
 
 
-        <div *ngIf="htmlData" class="uk-card uk-card-default uk-border-rounded uk-margin-small-top">
+        <div *ngIf="htmlData !== '<p><br></p>' " class="uk-card uk-card-default uk-border-rounded uk-margin-small-top" style="border: 1px solid#e5e5e5;">
             <div class="uk-card-body">
                 <div [innerHTML]="htmlData"></div>
             </div>

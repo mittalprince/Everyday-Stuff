@@ -33,7 +33,7 @@ export class TextEditorComponent implements OnInit{
         ],
         handlers: {}
     };
-    htmlData;
+    htmlData = '<p><br></p>';
 
     constructor(){
     }
