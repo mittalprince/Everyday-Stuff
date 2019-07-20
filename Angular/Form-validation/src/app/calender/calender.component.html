@@ -1,0 +1,45 @@
+<div class="uk-card uk-card-default uk-border-rounded uk-margin" style="box-shadow: none; border:1px solid #e5e5e5;">
+    <div class="uk-card-header">
+        <div class="uk-grid uk-grid-small" data-uk-grid>
+            <div class="uk-width-expand">
+                <h3 class='uk-margin-remove'>{{calender.current_month_string}} <span class="light-ub">{{calender.current_year}}</span></h3>
+            </div>
+            <div class="uk-width-auto">
+                <div class="uk-grid uk-grid-small" data-uk-grid>
+                    <div class="uk-width-expand">
+                        
+                    </div>
+                    <div class="uk-width-auto">
+                        <div class="btn-cal">
+                            <div class="uk-grid uk-grid-small uk-flex-middle" data-uk-grid>
+                                <div data-uk-tooltip="Previous month" class="uk-width-auto" (click)="currentMonthChange('previous')">
+                                    <span data-uk-icon="icon:chevron-left"></span>
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h6 class="small uk-margin-remove">{{calender.current_month_string}}</h6>
+                                </div>
+                                <div data-uk-tooltip="Next month" class="uk-width-auto" (click)="currentMonthChange('next')">
+                                    <span data-uk-icon="icon:chevron-right"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <section class="calendar__days" data-uk-scrollspy='target: > section; cls: uk-animation-slide-right-small; delay:100'>
+            <section class="calendar__top-bar">
+                <span *ngFor="let day of weekDays" class="top-bar__days">{{day}}</span>
+            </section>
+            <section *ngFor="let week of calender.weeks" class="calendar__week">
+                <div [ngClass]="{'active': dayActiveClassCheck(day), 'inactive': !dayActiveClassCheck(day), 'today': todayClassCheck(day) }" 
+                *ngFor="let day of week" class="calendar__day inactive">
+                    <span class="calendar__date">{{day}}</span>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
