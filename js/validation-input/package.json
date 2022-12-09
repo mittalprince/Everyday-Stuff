@@ -9,7 +9,7 @@
   "author": "mittalprince",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-validator": "^5.3.1"
   }
 }
